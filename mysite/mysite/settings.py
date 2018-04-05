@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 #this holds the names of all Django app that are activated in this Django instance
 INSTALLED_APPS = [
+    'upload_example.apps.UploadExampleConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

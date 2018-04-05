@@ -1,0 +1,17 @@
+{% block content %}
+  <ul>
+    <li>
+      <a href="{% url 'upload_example:model_form_upload' %}">Model Form Upload</a>
+    </li>
+  </ul>
+
+  <p>Uploaded files:</p>
+  <ul>
+    {% for obj in emails %}
+      <li>
+        <a href="{{obj.url}}">Name: {{ obj.description }}</a>
+        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

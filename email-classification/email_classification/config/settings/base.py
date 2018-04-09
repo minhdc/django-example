@@ -72,7 +72,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'email_classification.users.apps.UsersConfig',
     # Your stuff: custom apps go here
-    'upload_example.apps.UploadExampleConfig',
+    'uploader.apps.UploaderConfig',
+    'emailbrowser.apps.EmailbrowserConfig',
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

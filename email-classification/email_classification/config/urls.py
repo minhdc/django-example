@@ -17,8 +17,9 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
 
     # Your stuff: custom urls includes go here
-    url(r'^upload/',include(('upload_example.urls','upload_example'),namespace='upload_example')),
-
+    url(r'^uploader/',include(('uploader.urls','uploader'),namespace='uploader')),
+    url(r'^emailbrowser/',include(('emailbrowser.urls','emailbrowser'),namespace='emailbrowser')),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

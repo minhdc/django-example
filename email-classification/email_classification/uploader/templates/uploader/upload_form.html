@@ -1,10 +1,33 @@
+{% load static %}
+<head>
+    <title>fvckya</title>
+    <meta name="uploader" charset="utf-8">
+    <link rel="stylesheet" href= {%static "/css/bootstrap.min.css"%}>
+    <script type="text/javascript" src={% static "/js/jquery-3.3.1.min.js"%}>
+    <script type="text/javascript" src={% static "/js/bootstrap.min.js"%}>
+    </script>
 
-{% block content %}
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Upload</button>
-  </form>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            alert("yo");
+            $("#upload").click(function(){
+                alert("fook");
+            });
+        });
+    </script>
 
-  <p><a href="{% url 'home' %}">Return to home</a></p>
-{% endblock %}
+</head>
+<body>
+    <div class="container-fluid">
+        {% block content %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="upload" type="submit">Upload</button>
+        </form>
+
+        <p><a href="{% url 'home' %}">Return to home</a></p>
+        {% endblock %}
+    </div>
+
+</body>

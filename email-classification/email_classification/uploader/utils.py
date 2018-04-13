@@ -109,9 +109,19 @@ def do_the_classification_job(current_eml_path,treasure_path,eml_key_to_search):
 
     if email_list is not None:
         for each_mail in email_list:
-            from_addr = extract_from_address_in_payload(get_email_object(current_eml_path,each_mail),eml_key_to_search)
-            create_email_storing_folder_if_not_exists(from_addr,"mainstore")
-            copy_email_to_storing_folder(current_eml_path,os.path.join("mainstore",from_addr),each_mail)
-            move_copied_email_to_treasure(current_eml_path,treasure_path,each_mail)
+            from_addr = extract_from_address_in_payload(get_email_object(current_eml_path,each_mail), eml_key_to_search)
+            create_email_storing_folder_if_not_exists(from_addr, "mainstore")
+            copy_email_to_storing_folder(current_eml_path, os.path.join("mainstore",from_addr), each_mail)
+            move_copied_email_to_treasure(current_eml_path, treasure_path, each_mail)
     else:
         print("empty email list")
+
+
+def get_list_of_current_dirs(current_path):
+    ''' [NOT COMPLETED] 
+    list dirs in current path. 
+    '''
+    current_dirs = []
+    for each_element in os.listdir(current_path):        
+            current_dirs.append(each_element)            
+    return current_dirs

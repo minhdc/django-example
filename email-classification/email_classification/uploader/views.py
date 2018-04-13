@@ -1,10 +1,14 @@
-from django.shortcuts import render,redirect
+import os
+
+from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
 from django.core.files import File
 
 from .forms import EmailUploadForm
 from .models import Email
-from .utils import count_eml_files,do_the_classification_job,count_directory
+from .utils import count_eml_files, do_the_classification_job, count_directory, get_list_of_current_dirs, get_list_of_incoming_emails
+
+
 # Create your views here.
 def model_form_upload(request):
     if request.method == 'POST':
@@ -20,6 +24,7 @@ def model_form_upload(request):
 
 
 def home(request):
+    ''' '''
     input_eml_path = "temp-email-storage"
     backup_path = "backup-emails"
     main_path = "mainstore"
@@ -32,4 +37,6 @@ def home(request):
 
     do_the_classification_job(input_eml_path,backup_path,eml_key_to_search)
 
-    return render(request,'uploader/home.html')
+    current_dirs_list = get_list_of_current_dirs("mainstore")
+    
+    return render(request,'uploader/home.html',{'current_dirs_list':current_dirs_list})

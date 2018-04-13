@@ -1,0 +1,734 @@
+Delivered-To: relay.subscriber@gmail.com
+Received: by 10.223.192.12 with SMTP id z12csp4496204wre;
+        Mon, 26 Feb 2018 16:28:50 -0800 (PST)
+X-Google-Smtp-Source: AG47ELuzNekCJelj8J5wtLgcA5xLvVnWy9RQn5aQUk0EaLsHgMJI2phKt+S06Qa/c3aGnlRrvkHp
+X-Received: by 10.36.254.199 with SMTP id w190mr13807441ith.108.1519691330342;
+        Mon, 26 Feb 2018 16:28:50 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1519691330; cv=none;
+        d=google.com; s=arc-20160816;
+        b=KrVpUL4SfK39T1cXJIoLM6zmMDjfJdb5y/YYa2PFuWHzOXL84+83hZLiuzK8Wo+QBR
+         TzuTkScCxW9goaQttBY3n/mnAehD+X4kv34aSmriBkz21auGcyfBumLxI2/P6h+ukzAu
+         DlnLny+UQgQ0fAmGB+5IOOUl1agm4bA6CW/wXjzPi6thKi8P/5Y6SVuVrUM8F4aZRU7r
+         MmZIB1c5TE/OF8aUEdpRMdpCOM9uuOxOiO3MrPDe9Mz9wy8xOc0QdBOHSstgCELG+y4K
+         ey6LU0ZZ2fYsb2uUVBnbZTQaMfa4hueSIunMdVzMPPrFCkDXnsBiCs9Y0Mxo0rjHVGqA
+         ShTg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe:content-transfer-encoding:mime-version
+         :date:subject:from:to:dkim-signature:arc-authentication-results;
+        bh=ZXqQ3xo8dcKcTnu2X0Hk0V9sSGuj9kKK3Qd+u5FD1aA=;
+        b=rGrJKeUtzAkfGGz6cnw5EQhuoWGZTA71oHkmnyyY8pUVA8ObaLEAj7oMzhzLEOhok/
+         TFnmxvj4aCeNAH0d4TMMU0bgrZh2bL0U9rZS1Us78hUp4BELUbiOsuwSIddj002EueQQ
+         n8xQW4iBX3urp6bi2UuoQrv+jzIFka7GcO+ZFM5qivsm2+56deS0dPsUJW7FIJp1MpyR
+         5S+X/ojlP14YgbFVQgHcY7Zgs1uQkz3ikgf5uwmA36sGbJpgwe5HCkktoIEPEyX6ZPK/
+         YnKe51Ompph6fx6S/wfPcatn6t0FLjkpg/sxI2mr2al2cJXmqg5NxQGmxA/trRszdxTq
+         NeUg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=temperror (no key for signature) header.i=@muscleprodigy.com header.s=dk header.b=3LNlIEAU;
+       spf=pass (google.com: domain of bounce-162895-648-331598-relay.subscriber=gmail.com@s4.acemsrvf.com designates 192.92.97.232 as permitted sender) smtp.mailfrom=bounce-162895-648-331598-relay.subscriber=gmail.com@s4.acemsrvf.com
+Return-Path: <bounce-162895-648-331598-relay.subscriber=gmail.com@s4.acemsrvf.com>
+Received: from s4.acemsrvf.com (i.gap360.com. [192.92.97.232])
+        by mx.google.com with ESMTPS id o66si6306809ith.86.2018.02.26.16.28.49
+        for <relay.subscriber@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 26 Feb 2018 16:28:50 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-162895-648-331598-relay.subscriber=gmail.com@s4.acemsrvf.com designates 192.92.97.232 as permitted sender) client-ip=192.92.97.232;
+Authentication-Results: mx.google.com;
+       dkim=temperror (no key for signature) header.i=@muscleprodigy.com header.s=dk header.b=3LNlIEAU;
+       spf=pass (google.com: domain of bounce-162895-648-331598-relay.subscriber=gmail.com@s4.acemsrvf.com designates 192.92.97.232 as permitted sender) smtp.mailfrom=bounce-162895-648-331598-relay.subscriber=gmail.com@s4.acemsrvf.com
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=dk; d=muscleprodigy.com;
+ h=To:From:Subject:Date:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe:Message-ID; i=mp45@muscleprodigy.com;
+ bh=BT6KtWe5e7tZmkTr1R3i9qAdInM=;
+ b=3LNlIEAUfIwd+8X5jxvzBw3UQ+aLjAwRlNMXPAf1QJ707nLoychqtxEyGlXNVVc6Bn/qKqZxrwjD
+   ZI6EWYmMNJfIbD7h7L+e3JCHrB81iLZF6X7fJKmu8dDDy9uM929PCf/vEPmw+VD9MZEqGtbfJnMI
+   Gq8zSCDAVDQdYUb0HMY=
+Received: by s4.acemsrvf.com id hiij4425nf8l for <relay.subscriber@gmail.com>; Mon, 26 Feb 2018 18:28:48 -0600 (envelope-from <bounce-162895-648-331598-relay.subscriber=gmail.com@s4.acemsrvf.com>)
+To: <relay.subscriber@gmail.com>
+From: "Jaret | MP45 Workout" <mp45@muscleprodigy.com>
+Subject: =?utf-8?Q?I_Made_Mistakes=E2=80=A6?=
+Date: Mon, 26 Feb 2018 18:28:36 -0600
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift-4769484955a94a634630cc3.61620540_=_"
+Content-Transfer-Encoding: 7bit
+X-mid: cmVsYXkuc3Vic2NyaWJlckBnbWFpbC5jb20gLCBjNjQ4ICwgbTkxMSAsIHMxMTQ4MjQ0
+List-Unsubscribe: <mailto:unsubscribe-648-cbf82d6c4da4eb17175376fea76f28f4@muscleprodigy.activehosted.com>,
+ <http://muscleprodigy.acemlnb.com/box.php?nl=58&c=648&m=911&s=cbf82d6c4da4eb17175376fea76f28f4&funcml=unsub2&luha=1>
+Message-ID: <20180227002848.11259.1439119877.swift@muscleprodigy.activehosted.com>
+
+
+--_=_swift-4769484955a94a634630cc3.61620540_=_
+Content-Type: text/plain; charset=utf-8
+
+Hey, what's up?
+
+I'm not in business to try to bother you here.
+
+I honestly just want to provide you with a useful product to help you
+reach your goals.
+
+My name is Jaret. I was a 3x All-American wrestler in college and I
+started up this fitness brand Muscle Prodigy with my childhood friend.
+From Day 1, we had a vision to change the way people worked out and ate.
+
+I disliked the conflicting information out there and I disapproved of
+the programs that made people starve or workout three hours a day.
+
+I'm sure you're on the same page with me there, right?
+
+I wanted to give back to as many people as possible the formula I used
+to transform my body. And do it the all-natural way.
+
+I did it through a lot of trial and error, and I didn't want other
+people to suffer through that process by following some bodybuilder
+routine or some diet that makes you eat fish and broccoli 6 times a day,
+and do some boring treadmill workout. Both of those didn't really work
+as well as I thought they would, to be frank.
+
+Here are the mistakes I've made:
+
+* Working out two times a day, every day
+
+* Going on a run for over 45 minutes
+
+* Doing 3 sets of 8 reps of each exercise
+
+* Giving up too quickly on a program that was actually going to work,
+only to lose all the momentum I've gained
+
+* Being obsessed with the scale
+
+* Eating under 1,500 calories per day
+
+* Eating no carbs for weeks at a time
+
+* Forgetting to drop my ego at the door and caring too much about how
+much I lift
+
+* Changing my diet all at once only to boomerang and cave in to cravings
+
+* Not going into the gym with a plan built for progress
+
+* Relying too heavily on supplements (fat burning herbs or protein
+shakes that promise you to look like the next cover model)
+
+Sound familiar?
+
+I'm not sure if you were serious about MP45 or if you were looking for
+free information.
+
+Listen, you can get free workout information.
+
+We supply a ton of it on MuscleProdigy.com and on our social media
+channels. And I just gave you a BONUS GUIDE
+<http://muscleprodigy.acemlnb.com/lt.php?s=cbf82d6c4da4eb17175376fea76f28f4&i=648A911A58A2717>
+to help you understand fitness a little better.
+
+Feel free to use those resources and gain some good insight.
+
+But quick question... 
+
+How has scrubbing the Internet for fitness information worked out for
+you so far?
+
+Are you really proud of the way you look in the mirror?
+
+Don't just have your ego up and say, "Well, it's genetics...it's easy
+for you to say."
+
+I said that too. And you know what it got me?
+
+My butt kicked in front of the Boys and Girls Club.
+
+That's when I stopped lying to myself.
+
+I was LYING TO MYSELF all along.
+
+Genetics. Not enough time. Trainers, supplements. Not enough money.
+
+EXCUSES!!
+
+Yes, you may never be Ronnie Coleman. You may never be Greg Plitt. But
+you can be the best you.
+
+And that BEST YOU is way more fit than you are now...and YOU KNOW IT!!!
+
+Look. You wouldn't go to a restaurant, taste a sample, and expect to be
+full, right?
+
+You want to sit down and enjoy the whole experience.
+
+Let me break something to you that I had to learn the hard way - most
+articles on the Internet and in fitness magazines are just samples.
+
+Samples to get you to buy something or to follow someone on Instagram.
+
+Sometimes, it's better to save a whole bunch of time and get something
+that actually works...you know what I mean, right?
+
+MP45 is the gourmet experience. And we have proof to back it up.
+
+http://muscleprodigy.acemlnb.com/lt.php?s=cbf82d6c4da4eb17175376fea76f28f4&i=648A911A58A2699
+
+And I made it so affordable that anybody can get his or her hands on it.
+
+
+I could charge $20,000 for this advice by being labeled as a Fitness
+Consultant to Millionaires and Athletes. However, we are giving it away
+at $97 (for now)...so Muscle Prodigy becomes ingrained in your mind and
+heart as a company that actually cares about you and your goals.
+
+I designed this system using my experience as a top collegiate athlete.
+I transformed my body from 96 pounds my freshman year of high school to
+200 pounds at 6% body fat. All natural.
+
+I know you want a great body. Who doesn't? Here's your chance to get it!
+
+We did our part. We created the best workout system on the planet. Now
+you just need to do your part and trust us enough to follow it.
+
+That might seem like a lot on your part...but you're still reading
+this...and that means there's some connection here.
+
+And oh yeah, we give you a 100% money back guarantee if it doesn't work.
+
+Yep, your money back if it doesn't work.
+
+So what do you have to lose?
+
+Your pride? Your ego? Some time?
+
+Haven't you lost all 3 of those things before?
+
+Let's get you back on track again.
+
+Best,
+Jaret Grossman
+Creator of MP45
+Try MP45 - Get Started Instantly! <http://muscleprodigy.com/get-started-now-m>
+_________________
+
+Sent to relay.subscriber@gmail.com
+
+Unsubscribe:
+http://muscleprodigy.acemlnb.com/proc.php?nl=58&c=648&m=911&s=cbf82d6c4da4eb17175376fea76f28f4&act=unsub
+
+Muscle Prodigy, 6309 NW 25th Way, Boca Raton, FL 33496, United States
+--_=_swift-4769484955a94a634630cc3.61620540_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0A<head><!--[if !mso]><meta http-equiv=3D"X-UA-Compatible" =
+content=3D"IE=3Dedge"><!--<![endif]--><meta http-equiv=3D"Content-Type" con=
+tent=3D"text/html; charset=3Dutf-8"><meta http-equiv=3D"Content-Language" c=
+ontent=3D"en-us"><meta name=3D"format-detection" content=3D"telephone=3Dno"=
+><meta name=3D"format-detection" content=3D"date=3Dno"><meta name=3D"format=
+-detection" content=3D"address=3Dno"><meta name=3D"format-detection" conten=
+t=3D"email=3Dno"><style data-ac-keep=3D"true">=0A.ExternalClass {width:100%=
+; background:inherit; background-color:inherit;}=0A.ExternalClass p, .Exter=
+nalClass ul, .ExternalClass ol { Margin: 0; }=0A.undoreset div p, .undorese=
+t p { margin-bottom: 20px; }=0A</style><style data-ac-keep=3D"true">=0A@med=
+ia only screen and (max-width: 600px) {=09body { padding: 0!important; font=
+-size:1em!important; } * { -webkit-box-sizing: border-box; -moz-box-sizing:=
+ border-box; box-sizing: border-box; } * a:link, * a:hover, * a:visited, * =
+a:active { word-wrap: break-word; } *[class].divbody {-webkit-text-size-adj=
+ust:none !important; width:auto !important;} *[class].td_picture img {width=
+:auto !important;} *[class].td_text { line-height: 110%; } *[class].td_butt=
+on { width: auto; } /* Collapse all block elements */ :not(.body) table { d=
+isplay: block!important; float:none!important; border-collapse:collapse !im=
+portant; width:100% !important; min-width:100% !important; clear:both!impor=
+tant; } :not(.body) thead, :not(.body) tbody, :not(.body) tr { display:bloc=
+k!important; float:none!important; width:100% !important; } :not(.body) th,=
+ :not(.body) td, :not(.body) p { display:block!important; float:none!import=
+ant; width:100% !important; clear:both!important; } /* Remove browser defau=
+lt=0Astyling for elements */ ul, ol { margin-left: 20px; margin-bottom: 10p=
+x; margin-top: 10px; -webkit-margin-before: 0; -webkit-margin-after: 0; -we=
+bkit-padding-start: 0; } /* Set default height for spacer once collapse */ =
+*[class].spacer { height: auto!important; } a[href^=3Ddate]{ color:inherit =
+!important; text-decoration:none !important;} a[href^=3Dtelephone]{ color:i=
+nherit !important; text-decoration:none !important;} a[href^=3Daddress]{ co=
+lor:inherit !important; text-decoration:none !important;} a[href^=3Demail]{=
+ color:inherit !important; text-decoration:none !important;} /* Default tab=
+le cell height */ /* Default social icons */ *[class].ac-social-icon-16 {wi=
+dth:16px !important; height:16px !important;} *[class].ac-social-icon-24 {w=
+idth:24px !important; height:24px !important;} *[class].ac-social-icon-28 {=
+width:28px !important; height:28px !important;} *[class].__ac_social_icons =
+{ margin-right: 0px !important; } }=0A</style><style data-ac-keep=3D"true">=
+ @media only screen and (max-width: 667px) { #layout-row1114 img { width: 1=
+00% !important; height: auto !important; max-width: 650px !important; } div=
+.divbody { padding: 20px !important; } u + .body { display: table !importan=
+t; width: 100vw !important; min-width: 100vw !important; } u + .body table =
+{ display: table !important; width: 100% !important; min-width: 100% !impor=
+tant; } u + .body td { display: block !important; width: 100% !important; m=
+in-width: 100% !important; } u + .body img { display: inline-block !importa=
+nt; margin: auto !important; width: auto !important; vertical-align: bottom=
+ !important; } u + .body center { display: block !important; margin: auto !=
+important; width: 100% !important; min-width: 100% !important; text-align: =
+center !important; } u + .body table._ac_social_table, u + .body table._ac_=
+social_table td, u + .body table._ac_social_table div, u + .body table._ac_=
+social_table a { display: inline-block=0A!important; margin: auto !importan=
+t; width: auto !important; min-width: auto !important; text-align: center !=
+important; } u + .body table._ac_social_table img { display: inline-block !=
+important; margin: auto !important; width: 32px !important; min-width: 32px=
+ !important; max-width: 32px !important; }=0A}=0A@media only screen and (ma=
+x-width: 414px) { #layout-row1114 img { width: 100% !important; height: aut=
+o !important; max-width: 414px !important; } div.divbody { padding: 20px !i=
+mportant; } u + .body { display: table !important; width: 100vw !important;=
+ min-width: 100vw !important; } u + .body table { display: table !important=
+; width: 100% !important; min-width: 100% !important; } u + .body td { disp=
+lay: block !important; width: 100% !important; min-width: 100% !important; =
+} u + .body img { display: inline-block !important; margin: auto !important=
+; width: auto !important; vertical-align: bottom !important; } u + .body ce=
+nter { display: block !important; margin: auto !important; width: 100% !imp=
+ortant; min-width: 100% !important; text-align: center !important; } u + .b=
+ody table._ac_social_table, u + .body table._ac_social_table td, u + .body =
+table._ac_social_table div, u + .body table._ac_social_table a { display: i=
+nline-block !important; margin: auto !important;=0Awidth: auto !important; =
+min-width: auto !important; text-align: center !important; } u + .body tabl=
+e._ac_social_table img { display: inline-block !important; margin: auto !im=
+portant; width: 32px !important; min-width: 32px !important; max-width: 32p=
+x !important; }=0A}=0A@media only screen and (max-width: 375px) { #layout-r=
+ow1114 img { width: 100% !important; height: auto !important; max-width: 37=
+5px !important; } div.divbody { padding: 20px !important; } u + .body { dis=
+play: table !important; width: 100vw !important; min-width: 100vw !importan=
+t; } u + .body table { display: table !important; width: 100% !important; m=
+in-width: 100% !important; } u + .body td { display: block !important; widt=
+h: 100% !important; min-width: 100% !important; } u + .body img { display: =
+inline-block !important; margin: auto !important; width: auto !important; v=
+ertical-align: bottom !important; } u + .body center { display: block !impo=
+rtant; margin: auto !important; width: 100% !important; min-width: 100% !im=
+portant; text-align: center !important; } u + .body table._ac_social_table,=
+ u + .body table._ac_social_table td, u + .body table._ac_social_table div,=
+ u + .body table._ac_social_table a { display: inline-block !important; mar=
+gin: auto !important;=0Awidth: auto !important; min-width: auto !important;=
+ text-align: center !important; } u + .body table._ac_social_table img { di=
+splay: inline-block !important; margin: auto !important; width: 32px !impor=
+tant; min-width: 32px !important; max-width: 32px !important; }=0A}=0A@medi=
+a only screen and (max-width: 320px) { #layout-row1114 img { width: 100% !i=
+mportant; height: auto !important; max-width: 320px !important; } div.divbo=
+dy { padding: 20px !important; } u + .body { display: table !important; wid=
+th: 100vw !important; min-width: 100vw !important; } u + .body table { disp=
+lay: table !important; width: 100% !important; min-width: 100% !important; =
+} u + .body td { display: block !important; width: 100% !important; min-wid=
+th: 100% !important; } u + .body img { display: inline-block !important; ma=
+rgin: auto !important; width: auto !important; vertical-align: bottom !impo=
+rtant; } u + .body center { display: block !important; margin: auto !import=
+ant; width: 100% !important; min-width: 100% !important; text-align: center=
+ !important; } u + .body table._ac_social_table, u + .body table._ac_social=
+_table td, u + .body table._ac_social_table div, u + .body table._ac_social=
+_table a { display: inline-block !important; margin: auto !important;=0Awid=
+th: auto !important; min-width: auto !important; text-align: center !import=
+ant; } u + .body table._ac_social_table img { display: inline-block !import=
+ant; margin: auto !important; width: 32px !important; min-width: 32px !impo=
+rtant; max-width: 32px !important; }=0A}=0A</style></head><body id=3D"ac-de=
+signer" class=3D"body" style=3D"font-family: Arial; line-height: 1.1; margi=
+n: 0px; background-color: #ffffff; width: 100%; text-align: left;"><div cla=
+ss=3D"divbody" style=3D"margin: 0px; outline: none; padding: 0px; color: #5=
+D5D5D; font-family: arial; line-height: 1.1; width: 100%; background-color:=
+ #ffffff; background: #ffffff; text-align: left;"><table class=3D"template-=
+table" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" alig=
+n=3D"left" style=3D"font-size: 13px; min-width: auto; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; background-color: #ffffff; background: #ffffff;"><=
+tr><td align=3D"left" valign=3D"top" width=3D"100%"><table class=3D"templat=
+e-table" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"520" bgc=
+olor=3D"#ffffff" style=3D"font-size: 13px; min-width: auto; mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt; max-width: 520px;"><tr><td id=3D"layout_tabl=
+e_e5a873e5e3d0066929e2d0d79293e63b56aafef6" valign=3D"top" align=3D"left" w=
+idth=3D"520"><table=0Acellpadding=3D"0" cellspacing=3D"0" border=3D"0" clas=
+s=3D"layout layout-table root-table" width=3D"520" style=3D"font-size: 13px=
+; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td i=
+d=3D"layout-row-margin1097" valign=3D"top" style=3D"padding: 0;"><table wid=
+th=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-=
+size: 13px; min-width: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; =
+border-collapse: initial !important;"><tr id=3D"layout-row1097" class=3D"la=
+yout layout-row widget _widget_text style1097" style=3D"margin: 0; padding:=
+ 0;"><td id=3D"layout-row-padding1097" valign=3D"top" style=3D"padding: 0 0=
+ 0 20px;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"font-size: 13px; min-width: 100%; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt;"><tr><td id=3D"text_div1097" class=3D"td_text td_block=
+" valign=3D"top" align=3D"left" style=3D"line-height: 150%; color: inherit;=
+ font-size: inherit; font-weight: inherit; line-height: 1.5; text-decoratio=
+n: inherit;=0Afont-family: Arial; mso-line-height-rule: exactly;"> <div sty=
+le=3D"line-height: 150%; margin: 0; outline: none; padding: 0; color: #0000=
+00; font-size: 18px; mso-line-height-rule: exactly; line-height: 1.5;" data=
+-line-height=3D"1.5"> <div style=3D"margin: 0; outline: none; padding: 0; c=
+olor: #000000;"><span class=3D"" style=3D"color: #000000; font-size: inheri=
+t; font-weight: inherit; line-height: inherit; text-decoration: inherit;"><=
+span style=3D"color: #000000; font-size: inherit; font-weight: inherit; lin=
+e-height: inherit; text-decoration: inherit; font-family: arial, helvetica,=
+ sans;"><br>Hey, what's up?<br><br></span><span style=3D"color: #000000; fo=
+nt-size: inherit; font-weight: inherit; line-height: inherit; text-decorati=
+on: inherit; font-family: arial, helvetica, sans; text-align: inherit;">I'm=
+ not in business to try to bother you here.<br><br></span><span style=3D"co=
+lor: #000000; font-size: inherit; font-weight: inherit; line-height: inheri=
+t; text-decoration: inherit;=0Afont-family: arial, helvetica, sans; text-al=
+ign: inherit;">I honestly just want to provide you with a useful product to=
+ help you reach your goals.<br><br></span><span style=3D"color: #000000; fo=
+nt-size: inherit; font-weight: inherit; line-height: inherit; text-decorati=
+on: inherit; font-family: arial, helvetica, sans; text-align: inherit;">My =
+name is Jaret. I was a 3x All-American wrestler in college and I started up=
+ this fitness brand Muscle Prodigy with my childhood friend. From Day 1, we=
+ had a vision to change the way people worked out and ate.<br><br></span><s=
+pan style=3D"color: #000000; font-size: inherit; font-weight: inherit; line=
+-height: inherit; text-decoration: inherit; font-family: arial, helvetica, =
+sans; text-align: inherit;">I disliked the conflicting information out ther=
+e and I disapproved of the programs that made people starve or workout thre=
+e hours a day.<br><br></span><span style=3D"color: #000000; font-size: inhe=
+rit; font-weight: inherit; line-height:=0Ainherit; text-decoration: inherit=
+; font-family: arial, helvetica, sans; text-align: inherit;">I'm sure you'r=
+e on the same page with me there, right?<br><br></span><span style=3D"color=
+: #000000; font-size: inherit; font-weight: inherit; line-height: inherit; =
+text-decoration: inherit; font-family: arial, helvetica, sans; text-align: =
+inherit;">I wanted to give back to as many people as possible the formula I=
+ used to transform my body. And do it the all-natural way.<br><br></span><s=
+pan style=3D"color: #000000; font-size: inherit; font-weight: inherit; line=
+-height: inherit; text-decoration: inherit; font-family: arial, helvetica, =
+sans; text-align: inherit;">I did it through a lot of trial and error, and =
+I didn't want other people to suffer through that process by following some=
+ bodybuilder routine or some diet that makes you eat fish and broccoli 6 ti=
+mes a day, and do some boring treadmill workout. Both of those didn't reall=
+y work as well as I thought they would, to be=0Afrank.</span><br style=3D"c=
+olor:#000000; font-family: arial, helvetica, sans; text-align: inherit;"></=
+span><br style=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; ou=
+tline: none; padding: 0; color: #000000;"><b style=3D"margin: 0; outline: n=
+one; padding: 0; color: #000000;"><span style=3D"color: #000000; font-size:=
+ inherit; font-weight: inherit; line-height: inherit; text-decoration: inhe=
+rit; font-family: arial, helvetica, sans;" class=3D"">Here are the mistakes=
+ I've made:</span></b></div>=0A<span class=3D"" style=3D"color: #000000; fo=
+nt-size: inherit; font-weight: inherit; line-height: inherit; text-decorati=
+on: inherit;"><br style=3D"color:#000000;"><ul style=3D"margin: 0 0 0 40px;=
+ padding: 0;"><li style=3D"display: list-item; line-height: inherit; list-s=
+tyle-type: disc; margin: 0 0 0 3px;"><span style=3D"color: inherit; font-si=
+ze: inherit; font-weight: inherit; line-height: inherit; text-decoration: i=
+nherit; text-align: inherit;">Working out two times a day, every day</span>=
+<br></li><li style=3D"display: list-item; line-height: inherit; list-style-=
+type: disc; margin: 0 0 0 3px;"><span style=3D"color: inherit; font-size: i=
+nherit; font-weight: inherit; line-height: inherit; text-decoration: inheri=
+t; text-align: inherit;">Going on a run for over 45 minutes</span><br></li>=
+<li style=3D"display: list-item; line-height: inherit; list-style-type: dis=
+c; margin: 0 0 0 3px;"><span style=3D"color: inherit; font-size: inherit; f=
+ont-weight: inherit; line-height: inherit;=0Atext-decoration: inherit; text=
+-align: inherit;">Doing 3 sets of 8 reps of each exercise</span><br></li><l=
+i style=3D"display: list-item; line-height: inherit; list-style-type: disc;=
+ margin: 0 0 0 3px;"><span style=3D"color: inherit; font-size: inherit; fon=
+t-weight: inherit; line-height: inherit; text-decoration: inherit; text-ali=
+gn: inherit;">Giving up too quickly on a program that was actually going to=
+ work, only to lose all the momentum I've gained</span></li><li style=3D"di=
+splay: list-item; line-height: inherit; list-style-type: disc; margin: 0 0 =
+0 3px;"><span style=3D"color: #000000; font-size: inherit; font-weight: inh=
+erit; line-height: inherit; text-decoration: inherit; text-align: inherit;"=
+>Being obsessed with the scale</span></li><li style=3D"display: list-item; =
+line-height: inherit; list-style-type: disc; margin: 0 0 0 3px;"><span styl=
+e=3D"color: inherit; font-size: inherit; font-weight: inherit; line-height:=
+ inherit; text-decoration: inherit; text-align:=0Ainherit;">Eating under 1,=
+500 calories per day</span></li><li style=3D"display: list-item; line-heigh=
+t: inherit; list-style-type: disc; margin: 0 0 0 3px;">Eating no carbs for =
+weeks at a time</li><li style=3D"display: list-item; line-height: inherit; =
+list-style-type: disc; margin: 0 0 0 3px;"><span style=3D"color: inherit; f=
+ont-size: inherit; font-weight: inherit; line-height: inherit; text-decorat=
+ion: inherit; text-align: inherit;">Forgetting to drop my ego at the door a=
+nd caring too much about how much I lift</span><br></li><li style=3D"displa=
+y: list-item; line-height: inherit; list-style-type: disc; margin: 0 0 0 3p=
+x;"><span style=3D"color: inherit; font-size: inherit; font-weight: inherit=
+; line-height: inherit; text-decoration: inherit; text-align: inherit;">Cha=
+nging my diet all at once only to boomerang and cave in to cravings</span><=
+br></li><li style=3D"display: list-item; line-height: inherit; list-style-t=
+ype: disc; margin: 0 0 0 3px;"><span style=3D"color: inherit;=0Afont-size: =
+inherit; font-weight: inherit; line-height: inherit; text-decoration: inher=
+it; text-align: inherit;">Not going into the gym with a plan built for prog=
+ress</span><br></li><li style=3D"display: list-item; line-height: inherit; =
+list-style-type: disc; margin: 0 0 0 3px;"><span style=3D"color: inherit; f=
+ont-size: inherit; font-weight: inherit; line-height: inherit; text-decorat=
+ion: inherit; text-align: inherit;">Relying too heavily on supplements (fat=
+ burning herbs or protein shakes that promise you to look like the next cov=
+er model)</span><br></li></ul></span><br><span style=3D"color: #000000; fon=
+t-size: inherit; font-weight: inherit; line-height: inherit; text-decoratio=
+n: inherit; font-family: arial, helvetica, sans; text-align: inherit;">S</s=
+pan><span style=3D"color: #000000; font-size: inherit; font-weight: inherit=
+; line-height: inherit; text-decoration: inherit; font-family: arial, helve=
+tica, sans; text-align: inherit;">ound familiar?<br><br></span><span=0Astyl=
+e=3D"color: #000000; font-size: inherit; font-weight: inherit; line-height:=
+ inherit; text-decoration: inherit; font-family: arial, helvetica, sans; te=
+xt-align: inherit;">I'm not sure if you were serious about MP45 or if you w=
+ere looking for free information.<br><br></span><span style=3D"color: #0000=
+00; font-size: inherit; font-weight: inherit; line-height: inherit; text-de=
+coration: inherit; font-family: arial, helvetica, sans; text-align: inherit=
+;">Listen, you can get free workout information.</span><br style=3D"color:#=
+000000; font-family: arial, helvetica, sans; text-align: inherit;"><br styl=
+e=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; outline: none; =
+padding: 0; color: #000000;"><span class=3D"" style=3D"color: #000000; font=
+-size: inherit; font-weight: inherit; line-height: inherit; text-decoration=
+: inherit;"><span style=3D"color: #000000; font-size: inherit; font-weight:=
+ inherit; line-height: inherit; text-decoration: inherit; font-family: aria=
+l, helvetica,=0Asans;">We supply a ton of it on MuscleProdigy.com and on ou=
+r social media channels. And I just gave you a </span><u style=3D"margin: 0=
+; outline: none; padding: 0; color: #0174df;"><a href=3D"http://muscleprodi=
+gy.acemlnb.com/lt.php?s=3Dcbf82d6c4da4eb17175376fea76f28f4&i=3D648A911A58A2=
+717" data-ac-default-color=3D"1" style=3D"margin: 0; outline: none; padding=
+: 0; color: #0174df; text-decoration: underline; font-weight: bold;"><span =
+style=3D"color: ; font-size: inherit; font-weight: inherit; line-height: in=
+herit; text-decoration: inherit;">BONUS GUIDE</span></a></u><span style=3D"=
+color: #000000; font-size: inherit; font-weight: inherit; line-height: inhe=
+rit; text-decoration: inherit; font-family: arial, helvetica, sans;"> to he=
+lp you understand fitness a little better.</span></span></div>=0A<br style=
+=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; outline: none; p=
+adding: 0; color: #000000;"><span style=3D"color: #000000; font-size: inher=
+it; font-weight: inherit; line-height: inherit; text-decoration: inherit; f=
+ont-family: arial, helvetica, sans;" class=3D"">Feel free to use those reso=
+urces and gain some good insight.<b style=3D"margin: 0; outline: none; padd=
+ing: 0; color: #000000;"></b></span></div>=0A<br style=3D"color:#000000;col=
+or:#000000;"><div style=3D"margin: 0; outline: none; padding: 0; color: #00=
+0000;"><b style=3D"margin: 0; outline: none; padding: 0; color: #000000;"><=
+span style=3D"color: #000000; font-size: inherit; font-weight: inherit; lin=
+e-height: inherit; text-decoration: inherit; font-family: arial, helvetica,=
+ sans;" class=3D"">But quick question=E2=80=A6 </span></b></div>=0A<br styl=
+e=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; outline: none; =
+padding: 0; color: #000000;"><b style=3D"margin: 0; outline: none; padding:=
+ 0; color: #000000;"><span style=3D"color: #000000; font-size: inherit; fon=
+t-weight: inherit; line-height: inherit; text-decoration: inherit; font-fam=
+ily: arial, helvetica, sans;" class=3D"">How has scrubbing the Internet for=
+ fitness information worked out for you so far?</span></b></div>=0A<br styl=
+e=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; outline: none; =
+padding: 0; color: #000000;"><span style=3D"color: #000000; font-size: inhe=
+rit; font-weight: inherit; line-height: inherit; text-decoration: inherit; =
+font-family: arial, helvetica, sans;" class=3D"">Are you really proud of th=
+e way you look in the mirror?</span></div>=0A<br style=3D"color:#000000;col=
+or:#000000;"><div style=3D"margin: 0; outline: none; padding: 0; color: #00=
+0000;"><span style=3D"color: #000000; font-size: inherit; font-weight: inhe=
+rit; line-height: inherit; text-decoration: inherit; font-family: arial, he=
+lvetica, sans;" class=3D"">Don't just have your ego up and say, "Well, it's=
+ genetics...it's easy for you to say."</span></div>=0A<br style=3D"color:#0=
+00000;color:#000000;"><div style=3D"margin: 0; outline: none; padding: 0; c=
+olor: #000000;"><span style=3D"color: #000000; font-size: inherit; font-wei=
+ght: inherit; line-height: inherit; text-decoration: inherit; font-family: =
+arial, helvetica, sans;" class=3D"">I said that too. And you know what it g=
+ot me?</span></div>=0A<br style=3D"color:#000000;color:#000000;"><div style=
+=3D"margin: 0; outline: none; padding: 0; color: #000000;"><span style=3D"c=
+olor: #000000; font-size: inherit; font-weight: inherit; line-height: inher=
+it; text-decoration: inherit; font-family: arial, helvetica, sans;" class=
+=3D"">My butt kicked in front of the Boys and Girls Club.</span></div>=0A<b=
+r style=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; outline: =
+none; padding: 0; color: #000000;"><span style=3D"color: #000000; font-size=
+: inherit; font-weight: inherit; line-height: inherit; text-decoration: inh=
+erit; font-family: arial, helvetica, sans;" class=3D"">That's when I stoppe=
+d lying to myself.</span></div>=0A<br style=3D"color:#000000;color:#000000;=
+"><div style=3D"margin: 0; outline: none; padding: 0; color: #000000;"><spa=
+n style=3D"color: #000000; font-size: inherit; font-weight: inherit; line-h=
+eight: inherit; text-decoration: inherit; font-family: arial, helvetica, sa=
+ns;" class=3D"">I was LYING TO MYSELF all along.</span></div>=0A<div style=
+=3D"margin: 0; outline: none; padding: 0; color: #000000;"><span style=3D"c=
+olor: #000000; font-size: inherit; font-weight: inherit; line-height: inher=
+it; text-decoration: inherit; font-family: arial, helvetica, sans;" class=
+=3D""><br>Genetics. Not enough time. Trainers, supplements. Not enough mone=
+y.</span></div>=0A<br style=3D"color:#000000;color:#000000;"><div style=3D"=
+margin: 0; outline: none; padding: 0; color: #000000;"><span style=3D"color=
+: #000000; font-size: inherit; font-weight: inherit; line-height: inherit; =
+text-decoration: inherit; font-family: arial, helvetica, sans;" class=3D"">=
+EXCUSES!!</span></div>=0A<br style=3D"color:#000000;color:#000000;"><div st=
+yle=3D"margin: 0; outline: none; padding: 0; color: #000000;"><span style=
+=3D"color: #000000; font-size: inherit; font-weight: inherit; line-height: =
+inherit; text-decoration: inherit; font-family: arial, helvetica, sans;" cl=
+ass=3D"">Yes, you may never be Ronnie Coleman. You may never be Greg Plitt.=
+ But you can be the best you.</span></div>=0A<br style=3D"color:#000000;col=
+or:#000000;"><div style=3D"margin: 0; outline: none; padding: 0; color: #00=
+0000;"><span style=3D"color: #000000; font-size: inherit; font-weight: inhe=
+rit; line-height: inherit; text-decoration: inherit; font-family: arial, he=
+lvetica, sans;" class=3D"">And that BEST YOU is way more fit than you are n=
+ow...and YOU KNOW IT!!!<br><br></span></div>=0A<div style=3D"margin: 0; out=
+line: none; padding: 0; color: #000000;"><span style=3D"color: #000000; fon=
+t-size: inherit; font-weight: inherit; line-height: inherit; text-decoratio=
+n: inherit; font-family: arial, helvetica, sans;" class=3D"">Look. You woul=
+dn't go to a restaurant, taste a sample, and expect to be full, right?</spa=
+n></div>=0A<br style=3D"color:#000000;color:#000000;"><div style=3D"margin:=
+ 0; outline: none; padding: 0; color: #000000;"><span style=3D"color: #0000=
+00; font-size: inherit; font-weight: inherit; line-height: inherit; text-de=
+coration: inherit; font-family: arial, helvetica, sans;" class=3D"">You wan=
+t to sit down and enjoy the whole experience.</span></div>=0A<br style=3D"c=
+olor:#000000;color:#000000;"><div style=3D"margin: 0; outline: none; paddin=
+g: 0; color: #000000;"><b style=3D"margin: 0; outline: none; padding: 0; co=
+lor: #000000;"><span style=3D"color: #000000; font-size: inherit; font-weig=
+ht: inherit; line-height: inherit; text-decoration: inherit; font-family: a=
+rial, helvetica, sans;" class=3D"">Let me break something to you that I had=
+ to learn the hard way - most articles on the Internet and in fitness magaz=
+ines are just samples.</span></b></div>=0A<br style=3D"color:#000000;color:=
+#000000;"><div style=3D"margin: 0; outline: none; padding: 0; color: #00000=
+0;"><span style=3D"color: #000000; font-size: inherit; font-weight: inherit=
+; line-height: inherit; text-decoration: inherit; font-family: arial, helve=
+tica, sans;" class=3D"">Samples to get you to buy something or to follow so=
+meone on Instagram.</span></div>=0A<div style=3D"margin: 0; outline: none; =
+padding: 0; color: #000000;"><span style=3D"color: #000000; font-size: inhe=
+rit; font-weight: inherit; line-height: inherit; text-decoration: inherit; =
+font-family: arial, helvetica, sans;" class=3D""><br>Sometimes, it's better=
+ to save a whole bunch of time and get something that actually works=
+=E2=80=A6you know what I mean, right?</span></div>=0A<br style=3D"color:#00=
+0000;color:#000000;"><div style=3D"margin: 0; outline: none; padding: 0; co=
+lor: #000000;"><b style=3D"margin: 0; outline: none; padding: 0; color: #00=
+0000;"><span style=3D"color: #000000; font-size: inherit; font-weight: inhe=
+rit; line-height: inherit; text-decoration: inherit; font-family: arial, he=
+lvetica, sans;" class=3D"">MP45 is the gourmet experience. And we have proo=
+f to back it up.<br></span></b></div>=0A</div>=0A </div>=0A<!--[if (gte mso=
+ 12)&(lte mso 15) ]>=0A<style data-ac-keep=3D"true" data-ac-inline=3D"false=
+"> #text_div1097, #text_div1097 div { line-height: 1.5% !important; };=0A</=
+style>=0A<![endif]--></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A=
+</td>=0A</tr>=0A<tr><td id=3D"layout-row-margin1114" valign=3D"top" style=
+=3D"padding: 0;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"font-size: 13px; min-width: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; border-collapse: initial !important;"><tr id=3D"=
+layout-row1114" class=3D"layout layout-row widget _widget_picture style1114=
+" align=3D"left" style=3D""><td id=3D"layout-row-padding1114" valign=3D"top=
+" style=3D"padding: 0 0 0 20px;"><table width=3D"100%" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"font-size: 13px; min-width: 100%; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td class=3D"image-td" alig=
+n=3D"left" valign=3D"top" width=3D"500"><a href=3D"http://muscleprodigy.ace=
+mlnb.com/lt.php?s=3Dcbf82d6c4da4eb17175376fea76f28f4&i=3D648A911A58A2699" s=
+tyle=3D"margin: 0; outline: none; padding: 0; color: #0174df; display: bloc=
+k; min-width: 100%;"><img src=3D"http://muscleprodigy.imgus11.com/public/cc=
+a290c13de6897eaf98b38731515312.jpg?r=3D1510678973" alt=3D"" width=3D"500"=
+=0Astyle=3D"display: block; border: none; outline: none; width: 500px; opac=
+ity: 1; max-width: 100%;"></a></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</=
+table>=0A</td>=0A</tr>=0A<tr><td id=3D"layout-row-margin1113" valign=3D"top=
+" style=3D"padding: 0;"><table width=3D"100%" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size: 13px; min-width: 100%; mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-collapse: initial !important;"><tr=
+ id=3D"layout-row1113" class=3D"layout layout-row widget _widget_text style=
+1113" style=3D"margin: 0; padding: 0;"><td id=3D"layout-row-padding1113" va=
+lign=3D"top" style=3D"padding: 0 0 0 20px;"><table width=3D"100%" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size: 13px; min-width=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td id=3D"text_d=
+iv1113" class=3D"td_text td_block" valign=3D"top" align=3D"left" style=3D"l=
+ine-height: 150%; color: inherit; font-size: inherit; font-weight: inherit;=
+ line-height: 1.5; text-decoration: inherit; font-family: Arial; mso-line-h=
+eight-rule: exactly;"> <div style=3D"line-height: 150%; margin: 0; outline:=
+ none; padding: 0; color: #000000; font-size: 18px; mso-line-height-rule:=
+=0Aexactly; line-height: 1.5;" data-line-height=3D"1.5"> <div style=3D"marg=
+in: 0; outline: none; padding: 0; color: #000000;"><div style=3D"margin: 0;=
+ outline: none; padding: 0; color: #000000;"><span style=3D"color: #000000;=
+ font-size: inherit; font-weight: inherit; line-height: inherit; text-decor=
+ation: inherit; font-family: arial, helvetica, sans;" class=3D""><br>And I =
+made it so affordable that anybody can get his or her hands on it. </span><=
+/div>=0A<br style=3D"color:#000000;color:#000000;"><div style=3D"margin: 0;=
+ outline: none; padding: 0; color: #000000;"><span style=3D"color: #000000;=
+ font-size: inherit; font-weight: inherit; line-height: inherit; text-decor=
+ation: inherit; font-family: arial, helvetica, sans;" class=3D"">I could ch=
+arge $20,000 for this advice by being labeled as a Fitness Consultant to Mi=
+llionaires and Athletes. However, we are giving it away at $97 (for now)=
+=E2=80=A6so Muscle Prodigy becomes ingrained in your mind and heart as a co=
+mpany that actually cares about you and your goals.</span></div>=0A<br styl=
+e=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; outline: none; =
+padding: 0; color: #000000;"><span style=3D"color: #000000; font-size: inhe=
+rit; font-weight: inherit; line-height: inherit; text-decoration: inherit; =
+font-family: arial, helvetica, sans;" class=3D"">I designed this system usi=
+ng my experience as a top collegiate athlete. I transformed my body from 96=
+ pounds my freshman year of high school to 200 pounds at 6% body fat. All n=
+atural.</span></div>=0A<br style=3D"color:#000000;color:#000000;"><div styl=
+e=3D"margin: 0; outline: none; padding: 0; color: #000000;"><span style=3D"=
+color: #000000; font-size: inherit; font-weight: inherit; line-height: inhe=
+rit; text-decoration: inherit; font-family: arial, helvetica, sans;" class=
+=3D"">I know you want a great body. Who doesn't? Here's your chance to get =
+it!</span></div>=0A<br style=3D"color:#000000;color:#000000;"><div style=3D=
+"margin: 0; outline: none; padding: 0; color: #000000;"><b style=3D"margin:=
+ 0; outline: none; padding: 0; color: #000000;"><span style=3D"color: #0000=
+00; font-size: inherit; font-weight: inherit; line-height: inherit; text-de=
+coration: inherit; font-family: arial, helvetica, sans;" class=3D"">We did =
+our part. We created the best workout system on the planet. Now you just ne=
+ed to do your part and trust us enough to follow it.</span></b></div>=0A<br=
+ style=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; outline: n=
+one; padding: 0; color: #000000;"><span style=3D"color: #000000; font-size:=
+ inherit; font-weight: inherit; line-height: inherit; text-decoration: inhe=
+rit; font-family: arial, helvetica, sans;" class=3D"">That might seem like =
+a lot on your part...but you're still reading this...and that means there's=
+ some connection here.</span></div>=0A<br style=3D"color:#000000;color:#000=
+000;"><div style=3D"margin: 0; outline: none; padding: 0; color: #000000;">=
+<b style=3D"margin: 0; outline: none; padding: 0; color: #000000;"><span st=
+yle=3D"color: #000000; font-size: inherit; font-weight: inherit; line-heigh=
+t: inherit; text-decoration: inherit; font-family: arial, helvetica, sans;"=
+ class=3D"">And oh yeah, we give you a 100% money back guarantee if it does=
+n't work.</span></b></div>=0A<br style=3D"color:#000000;color:#000000;"><di=
+v style=3D"margin: 0; outline: none; padding: 0; color: #000000;"><b style=
+=3D"margin: 0; outline: none; padding: 0; color: #000000;"><span style=3D"c=
+olor: #000000; font-size: inherit; font-weight: inherit; line-height: inher=
+it; text-decoration: inherit; font-family: arial, helvetica, sans;" class=
+=3D"">Yep, your money back if it doesn't work.</span></b></div>=0A<br style=
+=3D"color:#000000;color:#000000;"><div style=3D"margin: 0; outline: none; p=
+adding: 0; color: #000000;"><span style=3D"color: #000000; font-size: inher=
+it; font-weight: inherit; line-height: inherit; text-decoration: inherit; f=
+ont-family: arial, helvetica, sans;" class=3D"">So what do you have to lose=
+?</span></div>=0A<br style=3D"color:#000000;color:#000000;"><div style=3D"m=
+argin: 0; outline: none; padding: 0; color: #000000;"><span style=3D"color:=
+ #000000; font-size: inherit; font-weight: inherit; line-height: inherit; t=
+ext-decoration: inherit; font-family: arial, helvetica, sans;" class=3D"">Y=
+our pride? Your ego? Some time?</span></div>=0A<br style=3D"color:#000000;c=
+olor:#000000;"><div style=3D"margin: 0; outline: none; padding: 0; color: #=
+000000;"><span style=3D"color: #000000; font-size: inherit; font-weight: in=
+herit; line-height: inherit; text-decoration: inherit; font-family: arial, =
+helvetica, sans;" class=3D"">Haven't you lost all 3 of those things before?=
+</span></div>=0A<span class=3D"" style=3D"color: #000000; font-size: inheri=
+t; font-weight: inherit; line-height: inherit; text-decoration: inherit;"><=
+br style=3D"color:#000000;"><span style=3D"color: #000000; font-size: inher=
+it; font-weight: inherit; line-height: inherit; text-decoration: inherit; f=
+ont-family: arial, helvetica, sans;">Let's get you back on track again.</sp=
+an></span><br style=3D"color:#000000;"></div>=0A </div>=0A<!--[if (gte mso =
+12)&(lte mso 15) ]>=0A<style data-ac-keep=3D"true" data-ac-inline=3D"false"=
+> #text_div1113, #text_div1113 div { line-height: 1.5% !important; };=0A</s=
+tyle>=0A<![endif]--></td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A<=
+/td>=0A</tr>=0A<tr><td id=3D"layout-row-margin1098" valign=3D"top" style=3D=
+"padding: 0;"><table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"font-size: 13px; min-width: 100%; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; border-collapse: initial !important;"><tr id=3D"lay=
+out-row1098" class=3D"layout layout-row widget _widget_text style1098" styl=
+e=3D"margin: 0; padding: 0;"><td id=3D"layout-row-padding1098" valign=3D"to=
+p" style=3D"padding: 0 0 0 20px;"><table width=3D"100%" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"font-size: 13px; min-width: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td id=3D"text_div1098" cl=
+ass=3D"td_text td_block" valign=3D"top" align=3D"left" style=3D"line-height=
+: 140%; color: inherit; font-size: inherit; font-weight: inherit; line-heig=
+ht: 1.4; text-decoration: inherit; font-family: Arial; mso-line-height-rule=
+: exactly;"> <div style=3D"line-height: 140%; margin: 0; outline: none; pad=
+ding: 0; mso-line-height-rule: exactly; line-height: 1.4;"=0Adata-line-heig=
+ht=3D"1.4"><p class=3D"MsoNormal" style=3D"margin: 0; outline: none; paddin=
+g: 0; color: inherit; font-size: inherit; font-weight: inherit; line-height=
+: 19.5pt; text-decoration: inherit; background-image: initial; background-a=
+ttachment: initial; background-size: initial; background-origin: initial; b=
+ackground-clip: initial; background-position: initial; background-repeat: i=
+nitial;"><br style=3D'font-size:13.5pt;font-family:"Arial","sans-serif";mso=
+-fareast-font-family: "Times New Roman";color:black'></p>=0A<span style=3D"=
+color: inherit; font-size: 18px; font-weight: inherit; line-height: inherit=
+; text-decoration: inherit;"><span style=3D"color: #000000; font-size: inhe=
+rit; font-weight: inherit; line-height: inherit; text-decoration: inherit; =
+font-family: arial, helvetica, sans;">Best,</span><br><span style=3D"color:=
+ #000000; font-size: inherit; font-weight: inherit; line-height: inherit; t=
+ext-decoration: inherit;">Jaret Grossm<span style=3D"color: inherit; font-s=
+ize: 18px; font-weight: inherit; line-height: inherit; text-decoration: inh=
+erit;" class=3D"">an<br> Creator of MP45<br></span></span></span><span styl=
+e=3D"color: inherit; font-size: 18px; font-weight: inherit; line-height: in=
+herit; text-decoration: inherit;" class=3D""><a href=3D"http://muscleprodig=
+y.com/get-started-now-m" data-ac-default-color=3D"1" style=3D"margin: 0; ou=
+tline: none; padding: 0; color: #0174df; text-decoration: underline; font-w=
+eight: bold;" class=3D"" target=3D"_blank"><span style=3D"color: ; font-siz=
+e: inherit;=0Afont-weight: inherit; line-height: inherit; text-decoration: =
+inherit;">Try MP45 - Get Started Instantly!</span></a><br></span><span styl=
+e=3D"color: #000000; font-size: 18px; font-weight: inherit; line-height: in=
+herit; text-decoration: inherit;"><br style=3D"font-size: 18px;font-family:=
+ arial, helvetica, sans;"><br><br><br><br><br><br><br><br></span><br></div>=
+=0A<!--[if (gte mso 12)&(lte mso 15) ]>=0A<style data-ac-keep=3D"true" data=
+-ac-inline=3D"false"> #text_div1098, #text_div1098 div { line-height: 1.4% =
+!important; };=0A</style>=0A<![endif]--></td>=0A</tr>=0A</table>=0A</td>=0A=
+</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</td>=0A</tr>=0A</table>=0A</=
+td>=0A</tr>=0A</table>=0A</div>=0A<img src=3D"http://muscleprodigy.acemlnb.=
+com/lt.php?nl=3D58&c=3D648&m=3D911&s=3Dcbf82d6c4da4eb17175376fea76f28f4&l=
+=3Dopen" border=3D"0" width=3D"1" height=3D"1" style=3D"display:block;width=
+:1px!important;min-width:1px!important;max-width:1px!important;height:1px!i=
+mportant;border:0;overflow:hidden;" /><br /><div style=3D"background-color:=
+#FFFFFF;background:#FFFFFF;min-width:100%;mso-table-lspace:0pt;mso-table-rs=
+pace:0pt;padding:20px;color:#000000;font-size:11px;font-family:arial,helvet=
+ica,sans-serif;line-height:140%;line-height:1.4;text-align:center;">=0A    =
+<center>=0A=09=09Sent to: <span style=3D"font-size:11px;font-family:arial,h=
+elvetica,sans-serif;font-weight:normal;text-decoration:none;outline:none;">=
+relay.subscriber@gmail.com</span>=0A=09=09<br>=0A=09=09<br>=0A=09=09<a href=
+=3D"http://muscleprodigy.acemlnb.com/proc.php?nl=3D58&c=3D648&m=3D911&s=3Dc=
+bf82d6c4da4eb17175376fea76f28f4&act=3Dunsub" style=3D"font-size:11px;font-f=
+amily:arial,helvetica,sans-serif;font-weight:bold;text-decoration:underline=
+;"><span style=3D"font-weight:bold;text-decoration:underline;">Unsubscribe<=
+/span></a>=0A=09=09<br>=0A=09=09<br> Muscle Prodigy, 6309 NW 25th Way, Boca=
+ Raton, FL 33496, United States=0A=09</center>=0A</div>=0A</body>=0A</html>
+--_=_swift-4769484955a94a634630cc3.61620540_=_--
+

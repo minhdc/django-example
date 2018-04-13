@@ -40,3 +40,9 @@ def home(request):
     current_dirs_list = get_list_of_current_dirs("mainstore")
     
     return render(request,'uploader/home.html',{'current_dirs_list':current_dirs_list})
+
+
+def list_emails_in_current_dir(request):
+    ''''''
+    main_path = "mainstore"
+    current_email_list = get_list_of_incoming_emails(main_path)

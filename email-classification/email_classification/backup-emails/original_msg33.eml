@@ -1,0 +1,3484 @@
+Delivered-To: relay.subscriber@gmail.com
+Received: by 10.223.154.72 with SMTP id z66csp159767wrb;
+        Fri, 30 Mar 2018 05:16:29 -0700 (PDT)
+X-Google-Smtp-Source: AIpwx4/gFiTPBlIV443Lz/p24sLNT8FiqToXzeSol92N2eKLvMCRLO9/hK2I97GTuJZOA2ia7dS/
+X-Received: by 10.13.232.71 with SMTP id r68mr7089782ywe.95.1522412188952;
+        Fri, 30 Mar 2018 05:16:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1522412188; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lJWHBmlAaAkmqiFpZ+8AbD/eYfIVLtV7cttTldMffJM+YcPQNG0+6fUE60BTNcxMBr
+         rusuh7FjHk294roAG7abUC8LAwEsW18L2ogXb8QS4ZY0W/bz70LG0ISV5/kwgFL5WtzR
+         WhxCAZZR+69ahnP8fwX5YqXHwLWkShahCTLpATfJqRZvuwi45yhyrM3LTcZy81uGEhvt
+         PkqqvvD8sZxNb8XGOUzukeRCZpnvRI0T86wfrXq8xuZ1B5okvAQCTcUmwlFOwEGEsxZI
+         XTwvf6cVizvFjmPc5kAhcwPXf/5Nh/ud8U9pZGwoaEpNxFftWpADsQTikCRTAkKkSW8m
+         mZDw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature:arc-authentication-results;
+        bh=87xMZXyohPHM53qrmt4PMt/06RJxs+FbEe35AsT0228=;
+        b=NQrX7EUUbGzThcbh3+BGAYqZE8XMyHiaVxMaqROUKmUh4mK39g44cW1EikPBOM/d1V
+         Clo7e06KNJJpMF7C7rpCB7JLGmFVT26kb+6jjM9uaEuuacOEjBnaIKJoLIrBvgAhlo/O
+         ehAaOymRA3eFwKRMQuODLGChrVnGIInYnYQm0d/hnJf+qgTargwA2/5J+ypw+pa9H7Ua
+         /hREjIbygIUlL0glQR8PHF/bKebygc464we2AQtV4PFdO6+GsNvAM4ojQFrkUa0JFEPt
+         9jqFGw7n1jJvyYb46bHiEPlMvtAmr4nWU4uJCWBRTd5YFgyq+5H00Ra/ip1qaTvfJzWe
+         tulQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@enerdata.pro header.s=k1 header.b=zqss7ql5;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=h3MRrsoV;
+       spf=pass (google.com: domain of bounce-mc.us6_13635215.1072201-relay.subscriber=gmail.com@mail175.atl81.rsgsv.net designates 198.2.129.175 as permitted sender) smtp.mailfrom=bounce-mc.us6_13635215.1072201-relay.subscriber=gmail.com@mail175.atl81.rsgsv.net;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=enerdata.pro
+Return-Path: <bounce-mc.us6_13635215.1072201-relay.subscriber=gmail.com@mail175.atl81.rsgsv.net>
+Received: from mail175.atl81.rsgsv.net (mail175.atl81.rsgsv.net. [198.2.129.175])
+        by mx.google.com with ESMTPS id a10si87229ywa.210.2018.03.30.05.16.28
+        for <relay.subscriber@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 30 Mar 2018 05:16:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-mc.us6_13635215.1072201-relay.subscriber=gmail.com@mail175.atl81.rsgsv.net designates 198.2.129.175 as permitted sender) client-ip=198.2.129.175;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@enerdata.pro header.s=k1 header.b=zqss7ql5;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=h3MRrsoV;
+       spf=pass (google.com: domain of bounce-mc.us6_13635215.1072201-relay.subscriber=gmail.com@mail175.atl81.rsgsv.net designates 198.2.129.175 as permitted sender) smtp.mailfrom=bounce-mc.us6_13635215.1072201-relay.subscriber=gmail.com@mail175.atl81.rsgsv.net;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=enerdata.pro
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=k1; d=enerdata.pro;
+ h=Subject:From:Reply-To:To:Date:Message-ID:List-ID:List-Unsubscribe:
+ Content-Type:MIME-Version; i=comms@enerdata.pro;
+ bh=87xMZXyohPHM53qrmt4PMt/06RJxs+FbEe35AsT0228=;
+ b=zqss7ql5YPN8tNbOfQgxgT0+1eS9Uts+iE9gOru2BVGeD0LgLt/eKassptXTZC53a1nZT9hIlqTD
+   sc5th4/CuizoYdZ31OHXZGOFwoniKhYMNjy836ynsBbWhpGWF38B8pATXSVEebYn2U+nxKVoc8a0
+   g4p7Vr33q2dLJR0opDk=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=k1; d=gmail.mcsv.net;
+ h=Subject:From:Reply-To:To:Date:Message-ID:Feedback-ID:List-ID:
+ List-Unsubscribe:Content-Type:MIME-Version;
+ bh=87xMZXyohPHM53qrmt4PMt/06RJxs+FbEe35AsT0228=;
+ b=h3MRrsoVA6ArjB70fZ+jFHS1tMqm2K3exdoLQ2EB4E0fo9BiCL2Fwpy0iaLK01krZ5TwSflZax5l
+   /Epj9kBXA+PFjkRhGBH64jcs1zZgosii15BITESBa1bPOm4hEIsAxctsX/7AM+HqsyFRPxX/R8Y7
+   RV/OPxxKJkogLXvRT4Y=
+Received: from (127.0.0.1) by mail175.atl81.rsgsv.net id hnol9o2ddl49 for <relay.subscriber@gmail.com>; Fri, 30 Mar 2018 12:16:01 +0000 (envelope-from <bounce-mc.us6_13635215.1072201-relay.subscriber=gmail.com@mail175.atl81.rsgsv.net>)
+Subject: =?utf-8?Q?Enerdata=20360=C2=B0=20Corporate=20Newsletter?=
+From: =?utf-8?Q?Enerdata?= <comms@enerdata.pro>
+Reply-To: =?utf-8?Q?Enerdata?= <comms@enerdata.pro>
+To: <relay.subscriber@gmail.com>
+Date: Fri, 30 Mar 2018 12:16:01 +0000
+Message-ID: <60b4d4ddea6b0d026cc71e519.77999c69ba.20180330121514.3813c7e4f1.42394f2c@mail175.atl81.rsgsv.net>
+X-Mailer: MailChimp Mailer - **CID3813c7e4f177999c69ba**
+X-Campaign: mailchimp60b4d4ddea6b0d026cc71e519.3813c7e4f1
+X-campaignid: mailchimp60b4d4ddea6b0d026cc71e519.3813c7e4f1
+X-Report-Abuse: Please report abuse for this campaign here: http://www.mailchimp.com/abuse/abuse.phtml?u=60b4d4ddea6b0d026cc71e519&id=3813c7e4f1&e=77999c69ba
+X-MC-User: 60b4d4ddea6b0d026cc71e519
+Feedback-ID: 13635215:13635215.1072201:us6:mc
+List-ID: 60b4d4ddea6b0d026cc71e519mc list <60b4d4ddea6b0d026cc71e519.196089.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://enerdata.us6.list-manage.com/unsubscribe?u=60b4d4ddea6b0d026cc71e519&id=838b1c9d18&e=77999c69ba&c=3813c7e4f1>, <mailto:unsubscribe-mc.us6_60b4d4ddea6b0d026cc71e519.3813c7e4f1-77999c69ba@mailin.mcsv.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-mcda: FALSE
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_55788326"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_55788326
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+What happened  @Enerdata in March?
+
+https://www.enerdata.net/?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-=
+Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-38=
+13c7e4f1-124378793
+
+View this email in your browser (https://mailchi.mp/enerdata/enerdata-360-=
+corporate-newsletter-1072201?e=3D77999c69ba)
+
+https://www.linkedin.com/company/enerdata?utm_source=3DEnerdata&utm_campai=
+gn=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=
+=3D0_838b1c9d18-3813c7e4f1-124378793 https://plus.google.com/+enerda=
+ta?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03=
+_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-=
+124378793 https://twitter.com/Enerdata?utm_source=3DEnerdata&utm_campaign=3D3813c7=
+e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d=
+18-3813c7e4f1-124378793 https://www.facebook.com/Enerdata?utm_source=
+=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_med=
+ium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793 https://www=
+=2Eenerdata.net/about-us/contact.html?utm_source=3DEnerdata&utm_campaign=3D3=
+813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838=
+b1c9d18-3813c7e4f1-124378793
+Enerdata (https://www.enerdata.net?utm_source=3DEnerdata&utm_campaign=3D38=
+13c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b=
+1c9d18-3813c7e4f1-124378793)     Research (https://www.enerdata.net/=
+research/?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsle=
+tter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-=
+124378793)     Solutions (https://www.enerdata.net/solutions/?utm_source=3D=
+Enerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=
+=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793)     Consultin=
+g (https://www.enerdata.net/consulting/?utm_source=3DEnerdata&utm_campaign=
+=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0=
+_838b1c9d18-3813c7e4f1-124378793)     Training (http://www.training.=
+enerdata.net/?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Ne=
+wsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-=
+124378793)
+Enerdata Newsletter=2C March 2018
+Dear Minh Cong=2C
+
+Here are some publications we recently issued=2C like the presentation of=
+ our EnerFuture 2040 updated scenarios (#EnerFuture) and an analysis about=
+ RES capacities evolution in 2017 (#Renewables) .  In addition=2C we propo=
+se to share some partners' publications (#Partners-publications) we found=
+ interesting.
+
+Discover also the new EnerTraM (Energy Transition Monitoring) tool (#EnerT=
+raM) we just developed=2C with several business cases.
+
+And finally have a look to our upcoming events (#Events) ...
+
+
+** Executive Brief - Solar surged in 2017=2C wind slowed down (https://www=
+=2Eenerdata.net/publications/executive-briefing/global-increase-wind-solar-c=
+apacities-2017.html?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_=
+Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4=
+f1-124378793)
+------------------------------------------------------------
+https://www.enerdata.net/publications/executive-briefing/global-increase-w=
+ind-solar-capacities-2017.html?utm_source=3DEnerdata&utm_campaign=3D3813c7=
+e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d=
+18-3813c7e4f1-124378793
+
+Global renewable capacity additions continued to grow in 2017=2C with near=
+ly 47 GW of wind capacity and close to 73 GW of solar capacity added world=
+wide during the year.
+
+Wind installations slowed down for the second year in a row=2C following t=
+he trend in the two largest markets=2C namely China and the United States.=
+  They soared in India=2C Brazil and Europe=2C while solar capacities surg=
+ed worldwide.
+
+Overall=2C renewable energies accounted for nearly half of capacity additi=
+ons in the United States=2C around 60% in China and 70% in India=2C even i=
+f fossil power capacities continued to build up in 2017.
+
+Read and download the analysis (https://www.enerdata.net/publications/exec=
+utive-briefing/global-increase-wind-solar-capacities-2017.html?utm_source=
+=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_med=
+ium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793)
+
+
+** Publication - Energy Transition Monitoring (https://www.enerdata.net/pu=
+blications/reports-presentations/energy-transition-monitoring-methodology.=
+html?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_=
+03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-=
+124378793)
+------------------------------------------------------------
+https://www.enerdata.net/publications/reports-presentations/energy-transit=
+ion-monitoring-methodology.html?utm_source=3DEnerdata&utm_campaign=3D3813c=
+7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9=
+d18-3813c7e4f1-124378793
+
+Enerdata=E2=80=99s new Energy Transition Monitoring tool: Enerdata is comb=
+ining its international databases and prospective scenarios to develop a n=
+ew information system: Energy Transition Monitoring=2C or EnerTraM. EnerTr=
+aM is a highly strategic tool which provides decision makers with a compre=
+hensive overview of energy transition trends=2C targets and trajectories.
+
+Read and download the publication (https://www.enerdata.net/publications/r=
+eports-presentations/energy-transition-monitoring-methodology.html?utm_sou=
+rce=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_=
+medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793)
+
+
+** Publication - EnerFuture World Energy Scenarios to 2040 (https://www.en=
+erdata.net/publications/reports-presentations/long-term-energy-forecasting=
+-scenarios-2018.html?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email=
+_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e=
+4f1-124378793)
+------------------------------------------------------------
+https://www.enerdata.net/publications/reports-presentations/long-term-ener=
+gy-forecasting-scenarios-2018.html?utm_source=3DEnerdata&utm_campaign=3D38=
+13c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b=
+1c9d18-3813c7e4f1-124378793
+
+The Enerdata Global Energy Forecasting team just released the 2018 edition=
+ of its 2040 world energy scenarios (https://www.enerdata.net/research/for=
+ecast-enerfuture.html?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Emai=
+l_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7=
+e4f1-124378793) . Leveraging the POLES model=2C we offer expert fore=
+sight for strategic/business planning and policy making: analysis of energ=
+y demand=2C energy mix and penetration of renewables=2C evolutions and cha=
+llenges according to climate constraints and technologies.
+
+Read and download the publication (https://www.enerdata.net/publications/r=
+eports-presentations/long-term-energy-forecasting-scenarios-2018.html?utm_=
+source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&u=
+tm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793)
+
+
+** Contract - New step on energy scenarios and MAC curves in our cooperati=
+on with the UK Ministry of Energy (https://www.enerdata.net/about-us/compa=
+ny-news/?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newslet=
+ter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-=
+124378793)
+------------------------------------------------------------
+https://www.enerdata.net/about-us/company-news/?utm_source=3DEnerdata&utm_=
+campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_=
+term=3D0_838b1c9d18-3813c7e4f1-124378793
+
+Enerdata has been selected by the UK Department for Business=2C Energy & I=
+ndustrial Strategy (BEIS) to provide them with Business As Usual (BAU) emi=
+ssions scenarios and Marginal Abatement Cost Curves (MACCs). Since 2007=2C=
+ the UK ministry in charge of energy has been using Enerdata=E2=80=99s for=
+ecasts to update two internal models of the ministry.
+
+More information (https://www.enerdata.net/about-us/company-news/?utm_sour=
+ce=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_m=
+edium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793)
+
+
+** Presentation on the 2030 EU climate and energy policy - 10 April 2018 (=
+https://www.enerdata.net/about-us/events.html?utm_source=3DEnerdata&utm_ca=
+mpaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_te=
+rm=3D0_838b1c9d18-3813c7e4f1-124378793#2030-EU-climate-energy-policy=
+)
+------------------------------------------------------------
+https://www.enerdata.net/about-us/events.html?utm_source=3DEnerdata&utm_ca=
+mpaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_te=
+rm=3D0_838b1c9d18-3813c7e4f1-124378793#2030-EU-climate-energy-policy
+
+On April 10^th=2C Enerdata in collaboration with I4CE=2C presents a public=
+ation entitled =C2=AB Mind the gap: aligning the 2030 EU climate and energ=
+y policy framework to meet long-term climate goals =C2=BB.
+
+More information (https://www.enerdata.net/about-us/events.html?utm_source=
+=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_med=
+ium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793#2030-EU-cli=
+mate-energy-policy)
+
+
+** Upcoming webinar hosted by The Clean Energy Solutions Center - "When Di=
+gital Technologies and the Sharing Economy Help Reinvent the Energy Sector=
+" - 5 April 2018 (https://register.gotowebinar.com/register/73317044519611=
+86305?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter=
+_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-=
+124378793)
+------------------------------------------------------------
+https://register.gotowebinar.com/register/7331704451961186305?utm_source=
+=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_med=
+ium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793
+
+The webinar will present five innovative business models of Dutch and Germ=
+an firms. These five models propose innovative solutions to allowing custo=
+mers to own renewable energy production=E2=80=94or to become self-sufficie=
+nt in their power supply. They make it possible to colour the electron so=
+ that customers can trace where their electricity comes from and what thei=
+r electricity bill finances. These models allow people to trade electricit=
+y with one another and be part of a community. They make it possible for o=
+wners of electric vehicles to take profit from the flexibility their vehic=
+les can offer the grid. Through these examples=2C the webinar is intended=
+ to give a flavour of what utilities are experimenting with=2C what they a=
+re trying to do to reinvent themselves and ensure they will still have a p=
+rominent role to play in tomorrow's energy system.
+
+Register (https://register.gotowebinar.com/register/7331704451961186305?ut=
+m_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018=
+&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793)
+
+Partners=E2=80=99 publications
+
+
+** ADEME=2C GrDF=2C GRTgaz - A 100% renewable gas mix in 2050? (http://www=
+=2Eademe.fr/a-100-renewable-gas-mix-in-2050?utm_source=3DEnerdata&utm_campai=
+gn=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=
+=3D0_838b1c9d18-3813c7e4f1-124378793)
+------------------------------------------------------------
+http://www.ademe.fr/a-100-renewable-gas-mix-in-2050?utm_source=3DEnerdata&=
+utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&=
+utm_term=3D0_838b1c9d18-3813c7e4f1-124378793
+
+According to the ADEME=2C the national French Energy Agency=2C the potenti=
+al for producing renewable gas is estimated at 460 TWh: France could then=
+ reach a 100% renewable gas mix in 2050=2C by accelerating the development=
+ of agricultural biogas projects=2C improving gas network management and o=
+ptimizing interactions with the power grid (peak biogas-fired generation=
+=2C power-to-gas).
+
+Download the publication: in english (http://www.ademe.fr/sites/default/fi=
+les/assets/documents/renewable-gas-mix-2050-010521.pdf?utm_source=3DEnerda=
+ta&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Dema=
+il&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793) - in french (http:/=
+/www.ademe.fr/sites/default/files/assets/documents/france-independante-mix=
+-gaz-renouvelable-010503a-rapport.pdf?utm_source=3DEnerdata&utm_campaign=
+=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0=
+_838b1c9d18-3813c7e4f1-124378793)
+
+
+** Global Alliance for Buildings and Construction - Global Roadmap - Towar=
+ds low-GHG and resilient buildings (https://globalabc.org/uploads/media/de=
+fault/0001/01/35860b0b1bb31a8bcf2f6b0acd18841d8d00e1f6.pdf?utm_source=3DEn=
+erdata&utm_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=
+=3Demail&utm_term=3D0_838b1c9d18-3813c7e4f1-124378793)
+------------------------------------------------------------
+https://globalabc.org/uploads/media/default/0001/01/35860b0b1bb31a8bcf2f6b=
+0acd18841d8d00e1f6.pdf?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Ema=
+il_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c=
+7e4f1-124378793
+
+The Global Alliance for Buildings and Construction highlights the needs fo=
+r a shift away from fossil fuels in the power sector and accelerated energ=
+y-efficiency (improved building enveloped and more efficient technologies)=
+ to achieve net-zero emissions in the buildings sector before 2060.
+
+Download the publication (https://globalabc.org/uploads/media/default/0001=
+/01/35860b0b1bb31a8bcf2f6b0acd18841d8d00e1f6.pdf?utm_source=3DEnerdata&utm=
+_campaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm=
+_term=3D0_838b1c9d18-3813c7e4f1-124378793)
+
+
+** Hydrogen Council - Hydrogen scaling up: A sustainable pathway for the g=
+lobal energy transition (http://hydrogencouncil.com/wp-content/uploads/201=
+7/11/Hydrogen-scaling-up-Hydrogen-Council.pdf?utm_source=3DEnerdata&utm_ca=
+mpaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_te=
+rm=3D0_838b1c9d18-3813c7e4f1-124378793)
+------------------------------------------------------------
+http://hydrogencouncil.com/wp-content/uploads/2017/11/Hydrogen-scaling-up-=
+Hydrogen-Council.pdf?utm_source=3DEnerdata&utm_campaign=3D3813c7e4f1-Email=
+_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d18-3813c7e=
+4f1-124378793
+
+The Hydrogen Council estimates that up to 300 TWh of excess solar and wind=
+ power could be converted to hydrogen by 2030. By 2050=2C hydrogen could a=
+ccount for up to 18% of final energy demand=2C contributing by almost =C2=
+=BC of the required CO2 abatement to limit global warming to 2=C2=B0C.
+
+Download the publication (http://hydrogencouncil.com/wp-content/uploads/20=
+17/11/Hydrogen-scaling-up-Hydrogen-Council.pdf?utm_source=3DEnerdata&utm_c=
+ampaign=3D3813c7e4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_t=
+erm=3D0_838b1c9d18-3813c7e4f1-124378793)
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Enerdata is an energy intelligence and consulting company established in 1=
+991. Our experts help you tackle key energy and climate issues and make so=
+und strategic and business decisions.
+We provide research=2C solutions=2C consulting and training to key energy=
+ actors worldwide.
+Copyright =C2=A9 2018 Enerdata=2C All rights reserved.
+Enerdata
+47 Avenue Alsace Lorraine
+Grenoble 38000
+France
+Data Protection
+
+ You are receiving this email because you expressed your interest in offer=
+s from Enerdata. Enerdata will not communicate nor sell your personal data=
+ on to third parties. View our ** Privacy Policy (https://www.enerdata.net=
+/about-us/privacy-policy.html?utm_source=3DEnerdata&utm_campaign=3D3813c7e=
+4f1-Email_Nrd_Newsletter_03_2018&utm_medium=3Demail&utm_term=3D0_838b1c9d1=
+8-3813c7e4f1-124378793)
+=2E
+
+E-mail Filter
+
+ Please add the e-mail addresses "** comms@enerdata.pro (mailto:comms@ener=
+data.pro)
+" and "** research@enerdata.net (mailto:research@enerdata.net)
+" to your list of approved senders to ensure you receive our e-mails.
+
+E-mail Content
+
+ This newsletter belongs to Enerdata and its content must not be republish=
+ed by third parties in any form without ** written permission (mailto:rese=
+arch@enerdata.net)
+=2E
+
+Unsubscribe
+
+ If you do not wish to receive e-mails of this type=2C you can ** unsubscr=
+ibe from this list (https://enerdata.us6.list-manage.com/unsubscribe?u=3D6=
+0b4d4ddea6b0d026cc71e519&id=3D838b1c9d18&e=3D77999c69ba&c=3D3813c7e4f1)
+=2E
+
+--_----------=_MCPart_55788326
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+=09<head>
+=09=09<!-- NAME: 1:2:1 COLUMN - FULL WIDTH -->
+=09=09<!--[if gte mso 15]>
+=09=09<xml>
+=09=09=09<o:OfficeDocumentSettings>
+=09=09=09<o:AllowPNG/>
+=09=09=09<o:PixelsPerInch>96</o:PixelsPerInch>
+=09=09=09</o:OfficeDocumentSettings>
+=09=09</xml>
+=09=09<![endif]-->
+=09=09<meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial=
+-scale=3D1">
+=09=09<title>Enerdata 360=C2=B0 Corporate Newsletter</title>
+
+    <style type=3D"text/css">
+=09=09p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1=2Ch2=2Ch3=2Ch4=2Ch5=2Ch6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img=2Ca img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body=2C#bodyTable=2C#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cblockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel]=2Ca[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p=2Ca=2Cli=2Ctd=2Cbody=2Ctable=2Cblockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass=2C.ExternalClass p=2C.ExternalClass td=2C.ExternalCla=
+ss div=2C.ExternalClass span=2C.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage=2C.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09=09body=2C#bodyTable{
+=09=09=09background-color:#ffffff;
+=09=09}
+=09=09#bodyCell{
+=09=09=09border-top:0;
+=09=09}
+=09=09h1{
+=09=09=09color:#00758f;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:26px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h2{
+=09=09=09color:#00758f;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:22px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h3{
+=09=09=09color:#00758f;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:18px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09h4{
+=09=09=09color:#00758f;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:16px;
+=09=09=09font-style:normal;
+=09=09=09font-weight:normal;
+=09=09=09line-height:125%;
+=09=09=09letter-spacing:normal;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templatePreheader{
+=09=09=09background-color:#ffffff;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0px;
+=09=09=09padding-bottom:0px;
+=09=09}
+=09=09#templatePreheader .mcnTextContent=2C#templatePreheader .mcnTextCont=
+ent p{
+=09=09=09color:#00758f;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:10px;
+=09=09=09line-height:100%;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templatePreheader .mcnTextContent a=2C#templatePreheader .mcnTextCo=
+ntent p a{
+=09=09=09color:#838383;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateHeader{
+=09=09=09background-color:#ec6625;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:top;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:2px;
+=09=09=09padding-bottom:2px;
+=09=09}
+=09=09#templateHeader .mcnTextContent=2C#templateHeader .mcnTextContent p{
+=09=09=09color:#ffffff;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:12px;
+=09=09=09line-height:100%;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateHeader .mcnTextContent a=2C#templateHeader .mcnTextContent=
+ p a{
+=09=09=09color:#ffffff;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09#templateUpperBody{
+=09=09=09background-color:#00758f;
+=09=09=09background-image:url("https://gallery.mailchimp.com/60b4d4ddea6b0=
+d026cc71e519/images/664c93b8-622f-406a-89a2-062c5085e94e.jpg");
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:top;
+=09=09=09background-size:auto;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:9px;
+=09=09=09padding-bottom:9px;
+=09=09}
+=09=09#templateUpperBody .mcnTextContent=2C#templateUpperBody .mcnTextCont=
+ent p{
+=09=09=09color:#ffffff;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:20px;
+=09=09=09line-height:200%;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateUpperBody .mcnTextContent a=2C#templateUpperBody .mcnTextCo=
+ntent p a{
+=09=09=09color:#ffffff;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09#templateColumns{
+=09=09=09background-color:#ffffff;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:0;
+=09=09=09padding-bottom:0;
+=09=09}
+=09=09#templateColumns .columnContainer .mcnTextContent=2C#templateColumns=
+ .columnContainer .mcnTextContent p{
+=09=09=09color:#202020;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateColumns .columnContainer .mcnTextContent a=2C#templateColum=
+ns .columnContainer .mcnTextContent p a{
+=09=09=09color:#ec6625;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09=09#templateLowerBody{
+=09=09=09background-color:#ffffff;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:2px solid #EAEAEA;
+=09=09=09padding-top:9px;
+=09=09=09padding-bottom:9px;
+=09=09}
+=09=09#templateLowerBody .mcnTextContent=2C#templateLowerBody .mcnTextCont=
+ent p{
+=09=09=09color:#202020;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:12px;
+=09=09=09line-height:150%;
+=09=09=09text-align:left;
+=09=09}
+=09=09#templateLowerBody .mcnTextContent a=2C#templateLowperBody .mcnTextC=
+ontent p a{
+=09=09=09color:#ec6625;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09#templateFooter{
+=09=09=09background-color:#fafafa;
+=09=09=09background-image:none;
+=09=09=09background-repeat:no-repeat;
+=09=09=09background-position:center;
+=09=09=09background-size:cover;
+=09=09=09border-top:0;
+=09=09=09border-bottom:0;
+=09=09=09padding-top:9px;
+=09=09=09padding-bottom:9px;
+=09=09}
+=09=09#templateFooter .mcnTextContent=2C#templateFooter .mcnTextContent p{
+=09=09=09color:#656565;
+=09=09=09font-family:Tahoma=2C Verdana=2C Segoe=2C sans-serif;
+=09=09=09font-size:11px;
+=09=09=09line-height:150%;
+=09=09=09text-align:center;
+=09=09}
+=09=09#templateFooter .mcnTextContent a=2C#templateFooter .mcnTextContent=
+ p a{
+=09=09=09color:#656565;
+=09=09=09font-weight:normal;
+=09=09=09text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body=2Ctable=2Ctd=2Cp=2Ca=2Cli=2Cblockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#bodyCell{
+=09=09=09padding-top:10px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.columnWrapper{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer=2C.mcnCaptionTopContent=2C.mcnRecContentContainer=
+=2C.mcnCaptionBottomContent=2C.mcnTextContentContainer=2C.mcnBoxedTextCont=
+entContainer=2C.mcnImageGroupContentContainer=2C.mcnCaptionLeftTextContent=
+Container=2C.mcnCaptionRightTextContentContainer=2C.mcnCaptionLeftImageCon=
+tentContainer=2C.mcnCaptionRightImageContentContainer=2C.mcnImageCardLeftT=
+extContentContainer=2C.mcnImageCardRightTextContentContainer=2C.mcnImageCa=
+rdLeftImageContentContainer=2C.mcnImageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent=2C.mcnCaptionRightConten=
+tOuter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent=2C.mcnCaptionBottomContent:last-child .=
+mcnCaptionBottomImageContent=2C.mcnCaptionBlockInner .mcnCaptionTopContent=
+:last-child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent=2C.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent=2C.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h1{
+=09=09=09font-size:22px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h2{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h3{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09h4{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer .mcnTextContent=2C.mcnBoxedTextContent=
+Container .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templatePreheader{
+=09=09=09display:block !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templatePreheader .mcnTextContent=2C#templatePreheader .mcnTextCont=
+ent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateHeader .mcnTextContent=2C#templateHeader .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateUpperBody .mcnTextContent=2C#templateUpperBody .mcnTextCont=
+ent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateColumns .columnContainer .mcnTextContent=2C#templateColumns=
+ .columnContainer .mcnTextContent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateLowerBody .mcnTextContent=2C#templateLowerBody .mcnTextCont=
+ent p{
+=09=09=09font-size:16px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09#templateFooter .mcnTextContent=2C#templateFooter .mcnTextContent p{
+=09=09=09font-size:14px !important;
+=09=09=09line-height:150% !important;
+=09=09}
+
+}</style></head>
+    <body style=3D"height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff=
+;">
+=09=09<!--
+-->
+=09=09<!--[if !gte mso 9]><!----><span class=3D"mcnPreviewText" style=3D"=
+display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0p=
+x; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;">What happ=
+ened  @Enerdata in March?</span><!--<![endif]-->
+=09=09<!--
+-->
+        <center>
+            <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" height=3D"100%" width=3D"100%" id=3D"bodyTable" style=3D"border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;pad=
+ding: 0;width: 100%;background-color: #ffffff;">
+                <tr>
+                    <td align=3D"center" valign=3D"top" id=3D"bodyCell" st=
+yle=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;border-=
+top: 0;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" style=3D"border-collapse: collapse;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;">
+                            <tr>
+=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" id=3D"template=
+Preheader" style=3D"background:#ffffff none no-repeat center/cover;mso-lin=
+e-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust=
+: 100%;background-color: #ffffff;background-image: none;background-repeat:=
+ no-repeat;background-position: center;background-size: cover;border-top:=
+ 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;">
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" width=3D"60=
+0" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=
+=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px=
+ !important;">
+=09=09=09=09=09=09=09=09=09=09<tr>
+                                =09=09=09<td valign=3D"top" class=3D"prehe=
+aderContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;"><table class=3D"mcnTextBlock" styl=
+e=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"390" style=3D"width:390px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 390px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #00758f;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 10px;line-height: 100%;text-align: left;"=
+ valign=3D"top">
+
+                            <a href=3D"https://enerdata.us6.list-manage.co=
+m/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Dba3c10bdc6&e=3D=
+77999c69ba" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;color: #838383;font-weight: normal;text-decorati=
+on: underline;"><img alt=3D"Enerdata Logo" data-file-id=3D"1739181" src=3D=
+"https://gallery.mailchimp.com/60b4d4ddea6b0d026cc71e519/images/337696c7-5=
+7c4-481a-bd93-1b03151286a9.png" style=3D"border: 0px;-moz--moz--moz--moz-h=
+eight: 75px;width: 129px;margin: 0px 15px 0px 0px;height: auto !important;=
+outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" widt=
+h=3D"129" height=3D"75" align=3D"left"></a><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"https://mailchi.mp/enerdata/enerdata-36=
+0-corporate-newsletter-1072201?e=3D77999c69ba" target=3D"_blank" title=3D"We=
+b version" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;color: #838383;font-weight: normal;text-=
+decoration: underline;">View this email in your browser</a>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"210" style=3D"width:210px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 210px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #00758f;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 10px;line-height: 100%;text-align: left;"=
+ valign=3D"top">
+
+                            <br>
+<br>
+<a href=3D"https://enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea=
+6b0d026cc71e519&id=3D45ad7510b3&e=3D77999c69ba" target=3D"_blank" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #838383;font-weight: normal;text-decoration: unde=
+rline;"><img alt=3D"LinkedIn Enerdata" data-file-id=3D"1739193" src=3D"htt=
+ps://gallery.mailchimp.com/60b4d4ddea6b0d026cc71e519/images/ce06e784-66b5-=
+4eaa-af5d-a1713043f902.jpg" style=3D"border-image: none 100% / 1 / 0 stret=
+ch;-moz-border-top-colors: none;-moz-border-left-colors: none;-moz-border-=
+bottom-colors: none;-moz-border-right-colors: none;width: 30px;height: 30p=
+x;margin: 0px;border: 0;outline: none;text-decoration: none;-ms-interpolat=
+ion-mode: bicubic;" width=3D"30" height=3D"30" align=3D"right"></a> <a hre=
+f=3D"https://enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d02=
+6cc71e519&id=3D1c3e5ad5e3&e=3D77999c69ba" target=3D"_blank" style=3D"mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;color: #838383;font-weight: normal;text-decoration: underline;">=
+<img alt=3D"Google + Enerdata" data-file-id=3D"1739201" src=3D"https://gal=
+lery.mailchimp.com/60b4d4ddea6b0d026cc71e519/images/014ea19d-aea8-4f3c-a66=
+a-b79ddd848d05.jpg" style=3D"border: 0px;width: 30px;height: 30px;margin:=
+ 0px;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"=
+ width=3D"30" height=3D"30" align=3D"right"></a> <a href=3D"https://enerda=
+ta.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D5b3e=
+0bf2a0&e=3D77999c69ba" target=3D"_blank" style=3D"mso-line-height-rule: e=
+xactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #8=
+38383;font-weight: normal;text-decoration: underline;"><img alt=3D"Twitter=
+ Enerdata" data-file-id=3D"1739209" src=3D"https://gallery.mailchimp.com/6=
+0b4d4ddea6b0d026cc71e519/images/744e53b0-c84e-4ca9-aaee-7b0369526252.jpg"=
+ style=3D"border: 0px;width: 30px;height: 30px;margin: 0px;outline: none;t=
+ext-decoration: none;-ms-interpolation-mode: bicubic;" width=3D"30" height=
+=3D"30" align=3D"right"></a> <a href=3D"https://enerdata.us6.list-manage.c=
+om/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D9e3df9644f&e=3D=
+77999c69ba" target=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;color: #838383;font-weight: n=
+ormal;text-decoration: underline;"><img alt=3D"Facebook Enerdata" data-fil=
+e-id=3D"1739205" src=3D"https://gallery.mailchimp.com/60b4d4ddea6b0d026cc7=
+1e519/images/66f70b0d-9920-4837-9d71-8dbefae82a5e.jpg" style=3D"border: 0p=
+x;width: 30px;height: 30px;margin: 0px;outline: none;text-decoration: none=
+;-ms-interpolation-mode: bicubic;" width=3D"30" height=3D"30" align=3D"rig=
+ht"></a> <a href=3D"https://enerdata.us6.list-manage.com/track/click?u=3D6=
+0b4d4ddea6b0d026cc71e519&id=3Da08182030f&e=3D77999c69ba" target=3D"_blank=
+" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webki=
+t-text-size-adjust: 100%;color: #838383;font-weight: normal;text-decoratio=
+n: underline;"><img alt=3D"Contact Enerdata" data-file-id=3D"1739213" src=
+=3D"https://gallery.mailchimp.com/60b4d4ddea6b0d026cc71e519/images/129438a=
+e-106c-4eca-bcb0-1f922e3459e2.jpg" style=3D"border: 0px;width: 30px;height=
+: 30px;margin: 0px;outline: none;text-decoration: none;-ms-interpolation-m=
+ode: bicubic;" width=3D"30" height=3D"30" align=3D"right"></a>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09</td>
+                            </tr>
+=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" id=3D"template=
+Header" style=3D"background:#ec6625 none no-repeat top/cover;mso-line-heig=
+ht-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;background-color: #ec6625;background-image: none;background-repeat: no-re=
+peat;background-position: top;background-size: cover;border-top: 0;border-=
+bottom: 0;padding-top: 2px;padding-bottom: 2px;">
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" width=3D"60=
+0" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=
+=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px=
+ !important;">
+=09=09=09=09=09=09=09=09=09=09<tr>
+                                =09=09=09<td valign=3D"top" class=3D"heade=
+rContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;"><table class=3D"mcnTextBlock" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #ffffff;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 100%;text-align: left;"=
+ valign=3D"top">
+
+                            <a href=3D"https://enerdata.us6.list-manage.co=
+m/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Dac037c6949&e=3D=
+77999c69ba" style=3D"padding-right: 30px;mso-line-height-rule: exactly;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;color: #ffffff;font-weight:=
+ normal;text-decoration: none;" target=3D"_blank" title=3D"Enerdata"><stro=
+ng>Enerdata</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"https://enerdat=
+a.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Db5cb1=
+d5add&e=3D77999c69ba" style=3D"padding-right: 30px;mso-line-height-rule:=
+ exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:=
+ #ffffff;font-weight: normal;text-decoration: none;" target=3D"_blank" tit=
+le=3D"Research"><strong>Research</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<a hr=
+ef=3D"https://enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d0=
+26cc71e519&id=3D268c326018&e=3D77999c69ba" style=3D"padding-right: 30px;m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;color: #ffffff;font-weight: normal;text-decoration: none;" ta=
+rget=3D"_blank" title=3D"Solutions"><strong>Solutions</strong></a>&nbsp;&n=
+bsp;&nbsp;&nbsp;<a href=3D"https://enerdata.us6.list-manage.com/track/clic=
+k?u=3D60b4d4ddea6b0d026cc71e519&id=3Dd7a16e826b&e=3D77999c69ba" style=3D"=
+padding-right: 30px;mso-line-height-rule: exactly;-ms-text-size-adjust: 10=
+0%;-webkit-text-size-adjust: 100%;color: #ffffff;font-weight: normal;text-=
+decoration: none;" target=3D"_blank" title=3D"Consulting"><strong>Consulti=
+ng</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"https://enerdata.us6.lis=
+t-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D9f03d32299&e=
+=3D77999c69ba" style=3D"padding-right: 30px;mso-line-height-rule: exactly=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #ffffff;=
+font-weight: normal;text-decoration: none;" target=3D"_blank" title=3D"Tra=
+ining"><strong>Training</strong></a>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09</td>
+                            </tr>
+=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" id=3D"template=
+UpperBody" style=3D"background:#00758f url(&quot;https://gallery.mailchimp=
+=2Ecom/60b4d4ddea6b0d026cc71e519/images/664c93b8-622f-406a-89a2-062c5085e94e=
+=2Ejpg&quot;) no-repeat top/auto;mso-line-height-rule: exactly;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #00758f;bac=
+kground-image: url(https://gallery.mailchimp.com/60b4d4ddea6b0d026cc71e519=
+/images/664c93b8-622f-406a-89a2-062c5085e94e.jpg);background-repeat: no-re=
+peat;background-position: top;background-size: auto;border-top: 0;border-b=
+ottom: 0;padding-top: 9px;padding-bottom: 9px;">
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" width=3D"60=
+0" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=
+=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px=
+ !important;">
+=09=09=09=09=09=09=09=09=09=09<tr>
+                                =09=09=09<td valign=3D"top" class=3D"bodyC=
+ontainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;"><table class=3D"mcnTextBlock" style=3D"=
+min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-=
+rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" wi=
+dth=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #ffffff;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 20px;line-height: 200%;text-align: left;"=
+ valign=3D"top">
+
+                            Enerdata Newsletter=2C March 2018
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09</td>
+                            </tr>
+=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" id=3D"template=
+Columns" style=3D"background:#ffffff none no-repeat center/cover;mso-line-=
+height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:=
+ 100%;background-color: #ffffff;background-image: none;background-repeat:=
+ no-repeat;background-position: center;background-size: cover;border-top:=
+ 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
+=09=09=09=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%" class=3D"templateContainer" style=3D"border-collap=
+se: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+                                        <tr>
+                                            <td valign=3D"top" style=3D"ms=
+o-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;">
+=09=09=09=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" wi=
+dth=3D"300" style=3D"width:300px;">
+=09=09=09=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09=09=09=09<table align=3D"left" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"300" class=3D"columnWrapper" sty=
+le=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0p=
+t;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td valign=3D"top" class=3D"colu=
+mnContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;"></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" wi=
+dth=3D"300" style=3D"width:300px;">
+=09=09=09=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09=09=09=09<table align=3D"left" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"300" class=3D"columnWrapper" sty=
+le=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0p=
+t;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=09=09=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09<td valign=3D"top" class=3D"colu=
+mnContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust:=
+ 100%;-webkit-text-size-adjust: 100%;"></td>
+=09=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09</td>
+                            </tr>
+=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" id=3D"template=
+LowerBody" style=3D"background:#ffffff none no-repeat center/cover;mso-lin=
+e-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust=
+: 100%;background-color: #ffffff;background-image: none;background-repeat:=
+ no-repeat;background-position: center;background-size: cover;border-top:=
+ 0;border-bottom: 2px solid #EAEAEA;padding-top: 9px;padding-bottom: 9px;"=
+>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" width=3D"60=
+0" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=
+=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px=
+ !important;">
+=09=09=09=09=09=09=09=09=09=09<tr>
+                                =09=09=09<td valign=3D"top" class=3D"bodyC=
+ontainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100=
+%;-webkit-text-size-adjust: 100%;"><table class=3D"mcnBoxedTextBlock" styl=
+e=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-t=
+able-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%=
+;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <!--[if gte mso 9]>
+=09<table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" width=3D"100%">
+=09<![endif]-->
+=09<tbody class=3D"mcnBoxedTextBlockOuter">
+        <tr>
+            <td class=3D"mcnBoxedTextBlockInner" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;">
+
+=09=09=09=09<!--[if gte mso 9]>
+=09=09=09=09<td align=3D"center" valign=3D"top" ">
+=09=09=09=09<![endif]-->
+                <table style=3D"min-width: 100%;border-collapse: collapse;=
+mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-we=
+bkit-text-size-adjust: 100%;" class=3D"mcnBoxedTextContentContainer" width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td style=3D"padding-top: 9px;padding-left: 18px;p=
+adding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-t=
+ext-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                            <table class=3D"mcnTextContentContainer" style=
+=3D"min-width: 100% !important;background-color: #F39325;border-collapse:=
+ collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D"0" b=
+order=3D"0">
+                                <tbody><tr>
+                                    <td class=3D"mcnTextContent" style=3D"=
+padding: 18px;color: #FFFFFF;font-family: Helvetica;font-size: 14px;font-w=
+eight: normal;line-height: 125%;text-align: left;mso-line-height-rule: exa=
+ctly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break:=
+ break-word;" valign=3D"top">
+                                        Dear Minh =
+Cong=2C<br>
+<br>
+Here are some publications we recently issued=2C like the presentation of=
+ our <a href=3D"#EnerFuture" target=3D"_blank" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #ec6625;font-weight: normal;text-decoration: none;"><span style=3D"colo=
+r:#ffffff"><u>EnerFuture 2040 updated scenarios</u></span></a> and an anal=
+ysis about <a href=3D"#Renewables" target=3D"_blank" style=3D"mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;color: #ec6625;font-weight: normal;text-decoration: none;"><span style=
+=3D"color:#ffffff"><u>RES capacities evolution in 2017</u></span></a>.&nbs=
+p; In addition=2C we propose to share some <a href=3D"#Partners-publicatio=
+ns" target=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size=
+-adjust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-weight: n=
+ormal;text-decoration: none;"><span style=3D"color:#ffffff"><u>partners' p=
+ublications</u></span></a> we found interesting.<br>
+<br>
+Discover also the new <a href=3D"#EnerTraM" target=3D"_blank" style=3D"mso=
+-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-ad=
+just: 100%;color: #ec6625;font-weight: normal;text-decoration: none;"><spa=
+n style=3D"color:#ffffff"><u>EnerTraM (Energy Transition Monitoring) tool<=
+/u></span></a> we just developed=2C with several business cases.<br>
+<br>
+And finally have a look to our <a href=3D"#Events" target=3D"_blank" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #ec6625;font-weight: normal;text-decoration: none=
+;"><span style=3D"color:#ffffff"><u>upcoming events</u></span></a>...
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if gte mso 9]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if gte mso 9]>
+                </tr>
+                </table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3Dd77e180425&e=3D77999c69ba" id=3D"Renewables" name=3D"Renewables" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #ec6625;font-weight: normal;text-decoration: none=
+;"><font color=3D"#00758f"><strong>Executive Brief</strong> - Solar surged=
+ in 2017=2C wind slowed down</font></a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D58769076fc&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"Renewable capacity" src=3D"https://gal=
+lery.mailchimp.com/60b4d4ddea6b0d026cc71e519/images/d5e57971-7891-41d8-b2f=
+d-a3494dd1a8e8.jpg" style=3D"max-width: 300px;border: 0;height: auto;outli=
+ne: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-al=
+ign: bottom;" class=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;"><strong>Global=
+ renewable capacity additions continued to grow in 2017</strong>=2C with n=
+early 47&nbsp;GW of wind capacity and close to 73&nbsp;GW of solar capacit=
+y added worldwide during the year.<br>
+<br>
+Wind installations slowed down for the second year in a row=2C following t=
+he trend in the two largest markets=2C namely China and the United States.=
+&nbsp; They soared in India=2C Brazil and Europe=2C while solar capacities=
+ surged worldwide.<br>
+<br>
+Overall=2C renewable energies accounted for nearly half of capacity additi=
+ons in the United States=2C around 60% in China and 70% in India=2C even i=
+f fossil power capacities continued to build up in 2017.
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;"><a href=3D"https://enerdata.us6.list-manage.com=
+/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D83a3928100&e=3D77999c69ba=
+" target=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-weight: nor=
+mal;text-decoration: none;">Read and download the analysis</a></p>
+</div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !importa=
+nt;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" style=3D"min-width: 100=
+%;border-top: 1px solid #CCCCCC;border-collapse: collapse;mso-table-lspace=
+: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3D22349989ac&e=3D77999c69ba" id=3D"EnerTraM" name=3D"EnerTraM" style=3D"=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;color: #ec6625;font-weight: normal;text-decoration: none;"><=
+font color=3D"#00758f"><strong>Publication</strong> - Energy Transition Mo=
+nitoring</font></a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D8cfd5899ac&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"Energy Transition Monitoring" src=3D"h=
+ttps://gallery.mailchimp.com/60b4d4ddea6b0d026cc71e519/images/f428ff6a-53d=
+f-4bd9-9156-ca62501b8379.jpg" style=3D"max-width: 300px;border: 0;height:=
+ auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;=
+vertical-align: bottom;" class=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;">
+<p style=3D"margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-fa=
+mily: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height=
+: 150%;text-align: left;">Enerdata=E2=80=99s new <strong>Energy Transition=
+ Monitoring</strong> tool: Enerdata is combining its international databas=
+es and prospective scenarios to develop a new information system: Energy T=
+ransition Monitoring=2C or EnerTraM. <strong>EnerTraM</strong> is a highly=
+ strategic tool which provides decision makers with a comprehensive overvi=
+ew of energy transition trends=2C targets and trajectories.</p>
+</div>
+
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;"><a href=3D"https://enerdata.us6.list-manage.com=
+/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D1ddf0be038&e=3D77999c69ba=
+" target=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-weight: nor=
+mal;text-decoration: none;">Read and download the publication</a></p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !importa=
+nt;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" style=3D"min-width: 100=
+%;border-top: 1px solid #CCCCCC;border-collapse: collapse;mso-table-lspace=
+: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3D07161ebf54&e=3D77999c69ba" id=3D"EnerFuture" name=3D"EnerFuture" style=
+=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-=
+size-adjust: 100%;color: #ec6625;font-weight: normal;text-decoration: none=
+;"><font color=3D"#00758f"><strong>Publication</strong> - EnerFuture World=
+ Energy Scenarios to 2040</font></a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Dfe2ee5c868&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"Forecasting" src=3D"https://gallery.ma=
+ilchimp.com/60b4d4ddea6b0d026cc71e519/images/a3ac44f1-f808-4766-bbd1-22dbf=
+d483394.jpeg" style=3D"max-width: 1125px;border: 0;height: auto;outline: n=
+one;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align:=
+ bottom;" class=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;">The Enerdata G=
+lobal Energy Forecasting team just released the 2018 edition of its&nbsp;<=
+a href=3D"https://enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6=
+b0d026cc71e519&id=3Da8cbbc3d24&e=3D77999c69ba" target=3D"_blank" style=3D=
+"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-siz=
+e-adjust: 100%;color: #ec6625;font-weight: normal;text-decoration: none;">=
+<strong>2040 world energy scenarios</strong></a>. Leveraging the&nbsp;<str=
+ong>POLES model</strong>=2C we offer&nbsp;<strong>expert foresight</strong=
+>&nbsp;for strategic/business planning and policy making:&nbsp;analysis of=
+ energy demand=2C energy mix and penetration of renewables=2C evolutions a=
+nd challenges according to climate constraints and technologies.</div>
+
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;"><a href=3D"https://enerdata.us6.list-manage.com=
+/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Dc35cc945f0&e=3D77999c69ba=
+" target=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-weight: nor=
+mal;text-decoration: none;">Read and download the publication</a></p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !importa=
+nt;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" style=3D"min-width: 100=
+%;border-top: 1px solid #CCCCCC;border-collapse: collapse;mso-table-lspace=
+: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3D03813ac3b7&e=3D77999c69ba" style=3D"mso-line-height-rule: exactly;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-=
+weight: normal;text-decoration: none;"><font color=3D"#00758f"><strong>Con=
+tract</strong> - New step on energy scenarios and MAC curves in our cooper=
+ation with the UK Ministry of Energy</font></a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D0e372b6996&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"BEIS logo" src=3D"https://gallery.mail=
+chimp.com/60b4d4ddea6b0d026cc71e519/images/82ae01f9-142b-4fc9-8974-f1c158f=
+18349.jpg" style=3D"max-width: 197px;border: 0;height: auto;outline: none;=
+text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bott=
+om;" class=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;">Enerdata has b=
+een selected by the UK Department for <strong>Business=2C Energy &amp; Ind=
+ustrial Strategy</strong> (BEIS) to provide them with Business As Usual (B=
+AU) emissions scenarios and Marginal Abatement Cost Curves (MACCs). Since=
+ 2007=2C the UK ministry in charge of energy has been using Enerdata=E2=80=
+=99s forecasts to update two internal models of the ministry.</div>
+
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;"><a href=3D"https://enerdata.us6.list-manage.com=
+/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D8e55e24f59&e=3D77999c69ba=
+" target=3D"_blank" title=3D"Contract read more" style=3D"mso-line-height-=
+rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;co=
+lor: #ec6625;font-weight: normal;text-decoration: none;">More information<=
+/a></p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !importa=
+nt;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" style=3D"min-width: 100=
+%;border-top: 1px solid #CCCCCC;border-collapse: collapse;mso-table-lspace=
+: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3Dd35cea148e&e=3D77999c69ba" id=3D"Events" name=3D"Events" target=3D"_bl=
+ank" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-we=
+bkit-text-size-adjust: 100%;color: #ec6625;font-weight: normal;text-decora=
+tion: none;"><font color=3D"#00758f"><strong>Presentation</strong> on the=
+ 2030 EU climate and energy policy - 10 April 2018</font></a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D55d9cc9cf2&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"" src=3D"https://gallery.mailchimp.com=
+/60b4d4ddea6b0d026cc71e519/images/21a683ac-5114-4a87-8d2b-266d813641a1.jpg=
+" style=3D"max-width: 300px;border: 0;height: auto;outline: none;text-deco=
+ration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" clas=
+s=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;">On April 10<su=
+p>th</sup>=2C Enerdata in collaboration with I4CE=2C presents a publicatio=
+n entitled =C2=AB Mind the gap: aligning the <strong>2030 EU climate and e=
+nergy policy</strong> framework to meet long-term climate goals =C2=BB.</d=
+iv>
+
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;"><a href=3D"https://enerdata.us6.list-manage.com=
+/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D8d00aa3e99&e=3D77999c69ba=
+" target=3D"_blank" title=3D"I4CE publication" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #ec6625;font-weight: normal;text-decoration: none;">More information</a=
+></p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !importa=
+nt;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" style=3D"min-width: 100=
+%;border-top: 1px solid #CCCCCC;border-collapse: collapse;mso-table-lspace=
+: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3Db21bb2784c&e=3D77999c69ba" target=3D"_blank" style=3D"mso-line-height-=
+rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;co=
+lor: #ec6625;font-weight: normal;text-decoration: none;"><font color=3D"#0=
+0758f"><strong>Upcoming webinar</strong> hosted by The Clean Energy Soluti=
+ons Center - "When Digital Technologies and the Sharing Economy Help Reinv=
+ent the Energy Sector" - 5 April 2018</font></a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Dc71fa28349&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"Digitalisation" src=3D"https://gallery=
+=2Emailchimp.com/60b4d4ddea6b0d026cc71e519/images/fc93d49b-4635-4479-b305-6e=
+1281e18213.jpg" style=3D"max-width: 300px;border: 0;height: auto;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align=
+: bottom;" class=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;">The webinar wi=
+ll present <strong>five innovative business models of Dutch and German fir=
+ms</strong>. These five models propose innovative solutions to <strong>all=
+owing customers to own renewable energy production</strong>=E2=80=94or to=
+ become <strong>self-sufficient in their power supply</strong>. They make=
+ it possible to colour the electron so that customers can trace where thei=
+r electricity comes from and what their electricity bill finances. These m=
+odels allow people to <strong>trade electricity with one another</strong>=
+ and be part of a community. They make it possible for owners of electric=
+ vehicles to take profit from the <strong>flexibility their vehicles can o=
+ffer the grid</strong>. Through these examples=2C the webinar is intended=
+ to give a flavour of what utilities are experimenting with=2C what they a=
+re trying to do to reinvent themselves and ensure they will still have a p=
+rominent role to play in tomorrow's energy system.</div>
+
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;"><a href=3D"https://enerdata.us6.list-manage.com=
+/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Da4eaaacdff&e=3D77999c69ba=
+" target=3D"_blank" title=3D"Register webinar" style=3D"mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #ec6625;font-weight: normal;text-decoration: none;">Register</a></p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnBoxedTextBlock" style=3D"min-width: 100%;border=
+-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspaci=
+ng=3D"0" cellpadding=3D"0" border=3D"0">
+    <!--[if gte mso 9]>
+=09<table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0=
+" width=3D"100%">
+=09<![endif]-->
+=09<tbody class=3D"mcnBoxedTextBlockOuter">
+        <tr>
+            <td class=3D"mcnBoxedTextBlockInner" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;">
+
+=09=09=09=09<!--[if gte mso 9]>
+=09=09=09=09<td align=3D"center" valign=3D"top" ">
+=09=09=09=09<![endif]-->
+                <table style=3D"min-width: 100%;border-collapse: collapse;=
+mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-we=
+bkit-text-size-adjust: 100%;" class=3D"mcnBoxedTextContentContainer" width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td style=3D"padding-top: 9px;padding-left: 18px;p=
+adding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-t=
+ext-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                            <table class=3D"mcnTextContentContainer" style=
+=3D"min-width: 100% !important;background-color: #00758F;border-collapse:=
+ collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust=
+: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D"0" b=
+order=3D"0">
+                                <tbody><tr>
+                                    <td class=3D"mcnTextContent" style=3D"=
+padding: 18px;color: #FFFFFF;font-family: Tahoma=2C Verdana=2C Segoe=2C sa=
+ns-serif;font-size: 16px;font-style: normal;font-weight: bold;text-align:=
+ left;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-tex=
+t-size-adjust: 100%;word-break: break-word;line-height: 150%;" valign=3D"t=
+op">
+                                        <a id=3D"Partners-publications" na=
+me=3D"Partners-publications" style=3D"mso-line-height-rule: exactly;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-we=
+ight: normal;text-decoration: none;"></a>Partners=E2=80=99 publications
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if gte mso 9]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if gte mso 9]>
+                </tr>
+                </table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3D728dd57713&e=3D77999c69ba" style=3D"mso-line-height-rule: exactly;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-=
+weight: normal;text-decoration: none;"><font color=3D"#00758f"><strong>ADE=
+ME=2C GrDF=2C GRTgaz</strong> - A 100% renewable gas mix in 2050?</font></=
+a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Df83929c185&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"A 100% renewable gas mix in 2050?" src=
+=3D"https://gallery.mailchimp.com/60b4d4ddea6b0d026cc71e519/images/c3d2817=
+2-e667-4049-aab3-873dd1a5b9ae.jpg" style=3D"max-width: 200px;border: 0;hei=
+ght: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicu=
+bic;vertical-align: bottom;" class=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;">According to t=
+he ADEME=2C the national French Energy Agency=2C the potential for produci=
+ng renewable gas is estimated at 460 TWh: France could then reach a 100% r=
+enewable gas mix in 2050=2C by accelerating the development of agricultura=
+l biogas projects=2C improving gas network management and optimizing inter=
+actions with the power grid (peak biogas-fired generation=2C power-to-gas)=
+=2E</div>
+
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;">Download the publication: <a href=3D"https://en=
+erdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D=
+81dd269440&e=3D77999c69ba" target=3D"_blank" title=3D"Publication ADEME e=
+nglish" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;color: #ec6625;font-weight: normal;text-dec=
+oration: none;">in english</a> - <a href=3D"https://enerdata.us6.list-mana=
+ge.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D2e9d9dca69&e=3D=
+77999c69ba" target=3D"_blank" title=3D"Publication ADEME french" style=3D"mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;color: #ec6625;font-weight: normal;text-decoration: none;">in fr=
+ench</a></p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !importa=
+nt;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" style=3D"min-width: 100=
+%;border-top: 1px solid #CCCCCC;border-collapse: collapse;mso-table-lspace=
+: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3Db2f5e26ff5&e=3D77999c69ba" style=3D"mso-line-height-rule: exactly;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-=
+weight: normal;text-decoration: none;"><font color=3D"#00758f"><strong>Glo=
+bal Alliance for Buildings and Construction</strong> - Global Roadmap - To=
+wards low-GHG and resilient buildings</font></a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3De1791d9a1a&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"Global Roadmap" src=3D"https://gallery=
+=2Emailchimp.com/60b4d4ddea6b0d026cc71e519/images/0f642320-2166-4c3e-9fed-37=
+f8a46bf72d.jpg" style=3D"max-width: 300px;border: 0;height: auto;outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align=
+: bottom;" class=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;">The Global All=
+iance for Buildings and Construction highlights the needs for a shift away=
+ from fossil fuels in the power sector and accelerated energy-efficiency (=
+improved building enveloped and more efficient technologies) to achieve ne=
+t-zero emissions in the buildings sector before 2060.</div>
+
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;"><a href=3D"https://enerdata.us6.list-manage.com=
+/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3D7a5c4b53ab&e=3D77999c69ba=
+" target=3D"_blank" title=3D"Publication Global ABC" style=3D"mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;color: #ec6625;font-weight: normal;text-decoration: none;">Download the=
+ publication</a></p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnDividerBlock" style=3D"min-width: 100%;border-c=
+ollapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-siz=
+e-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !importa=
+nt;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnDividerBlockOuter">
+        <tr>
+            <td class=3D"mcnDividerBlockInner" style=3D"min-width: 100%;pa=
+dding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webk=
+it-text-size-adjust: 100%;">
+                <table class=3D"mcnDividerContent" style=3D"min-width: 100=
+%;border-top: 1px solid #CCCCCC;border-collapse: collapse;mso-table-lspace=
+: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-a=
+djust: 100%;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0">
+                    <tbody><tr>
+                        <td style=3D"mso-line-height-rule: exactly;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class=3D"mcnDividerBlockInner" style=3D"padding: 18px;=
+">
+                <hr class=3D"mcnDividerContent" style=3D"border-bottom-col=
+or:none; border-left-color:none; border-right-color:none; border-bottom-wi=
+dth:0; border-left-width:0; border-right-width:0; margin-top:0; margin-rig=
+ht:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #202020;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-align: left;"=
+ valign=3D"top">
+
+                            <h4 class=3D"null" style=3D"display: block;mar=
+gin: 0;padding: 0;color: #00758f;font-family: Tahoma=2C Verdana=2C Segoe=
+=2C sans-serif;font-size: 16px;font-style: normal;font-weight: normal;line=
+-height: 125%;letter-spacing: normal;text-align: left;"><a href=3D"https:/=
+/enerdata.us6.list-manage.com/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=
+=3D66830bbfcd&e=3D77999c69ba" style=3D"mso-line-height-rule: exactly;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #ec6625;font-=
+weight: normal;text-decoration: none;"><font color=3D"#00758f"><strong>Hyd=
+rogen Council</strong> - Hydrogen scaling up: A sustainable pathway for th=
+e global energy transition</font></a></h4>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnCaptionBlock" width=3D"100%" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-tab=
+le-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-te=
+xt-size-adjust: 100%;">
+    <tbody class=3D"mcnCaptionBlockOuter">
+        <tr>
+            <td class=3D"mcnCaptionBlockInner" style=3D"padding: 9px;mso-l=
+ine-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adju=
+st: 100%;" valign=3D"top">
+
+
+
+
+<table class=3D"mcnCaptionRightContentOuter" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" style=3D"border-collapse: collapse;mso-=
+table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit=
+-text-size-adjust: 100%;">
+    <tbody><tr>
+        <td class=3D"mcnCaptionRightContentInner" style=3D"padding: 0 9px;=
+mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;" valign=3D"top">
+            <table class=3D"mcnCaptionRightImageContentContainer" width=3D=
+"176" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnCaptionRightImageContent" valign=3D"to=
+p" align=3D"left" style=3D"mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <a href=3D"https://enerdata.us6.list-manage.com/tr=
+ack/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Decdcc1968c&e=3D77999c69ba" t=
+itle=3D"" class=3D"" target=3D"_blank" style=3D"mso-line-height-rule: exac=
+tly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+
+                        <img alt=3D"Hydrogen scaling up" src=3D"https://ga=
+llery.mailchimp.com/60b4d4ddea6b0d026cc71e519/images/2e7c503a-1d68-4f96-a2=
+3e-c0c8002bbd49.jpg" style=3D"max-width: 300px;border: 0;height: auto;outl=
+ine: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-a=
+lign: bottom;" class=3D"mcnImage" width=3D"176">
+                        </a>
+
+
+                    </td>
+                </tr>
+            </tbody></table>
+            <table class=3D"mcnCaptionRightTextContentContainer" width=3D"=
+352" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right" styl=
+e=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt=
+;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <tbody><tr>
+                    <td class=3D"mcnTextContent" valign=3D"top" style=3D"m=
+so-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-=
+adjust: 100%;word-break: break-word;color: #202020;font-family: Tahoma=2C=
+ Verdana=2C Segoe=2C sans-serif;font-size: 12px;line-height: 150%;text-ali=
+gn: left;">
+                        <div style=3D"text-align: justify;">The Hydrogen C=
+ouncil estimates that up to 300 TWh of excess solar and wind power could b=
+e converted to hydrogen by 2030. By 2050=2C hydrogen could account for up=
+ to 18% of final energy demand=2C contributing by almost =C2=BC of the req=
+uired CO2 abatement to limit global warming to 2=C2=B0C.</div>
+
+<p style=3D"text-align: right;margin: 10px 0;padding: 0;mso-line-height-ru=
+le: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;colo=
+r: #202020;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size=
+: 12px;line-height: 150%;"><a href=3D"https://enerdata.us6.list-manage.com=
+/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Dd527852537&e=3D77999c69ba=
+" target=3D"_blank" title=3D"Publication Hydrogen Council" style=3D"mso-li=
+ne-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;color: #ec6625;font-weight: normal;text-decoration: none;">Downloa=
+d the publication</a></p>
+
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09</td>
+                            </tr>
+                            <tr>
+=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" id=3D"template=
+Footer" style=3D"background:#fafafa none no-repeat center/cover;mso-line-h=
+eight-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 1=
+00%;background-color: #fafafa;background-image: none;background-repeat: no=
+-repeat;background-position: center;background-size: cover;border-top: 0;b=
+order-bottom: 0;padding-top: 9px;padding-bottom: 9px;">
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td align=3D"center" valign=3D"top" width=3D"60=
+0" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"templateContainer" style=
+=3D"border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;=
+-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px=
+ !important;">
+=09=09=09=09=09=09=09=09=09=09<tr>
+                                =09=09=09<td valign=3D"top" class=3D"foote=
+rContainer" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjust: 1=
+00%;-webkit-text-size-adjust: 100%;"><table class=3D"mcnTextBlock" style=
+=3D"min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-ta=
+ble-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;=
+" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #656565;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 11px;line-height: 150%;text-align: center;=
+" valign=3D"top">
+
+                            Enerdata is an energy intelligence and consult=
+ing company established in 1991. Our experts help you tackle key energy an=
+d climate issues and make sound strategic and business decisions.<br>
+We provide research=2C solutions=2C consulting and training to key energy=
+ actors worldwide.<br>
+<em>Copyright =C2=A9 2018 Enerdata=2C All rights reserved.</em><br>
+Enerdata
+47 Avenue Alsace Lorraine
+Grenoble 38000
+France
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"210" style=3D"width:210px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 210px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding: 0px=
+ 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #65=
+6565;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 11px=
+;line-height: 150%;" valign=3D"top">
+<strong>Data Protection</strong>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"390" style=3D"width:390px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 390px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding: 0px=
+ 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #65=
+6565;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 11px=
+;line-height: 150%;" valign=3D"top">
+ You are receiving this email because you expressed your interest in offer=
+s from Enerdata. Enerdata will not communicate nor sell your personal data=
+ on to third parties. View our <a href=3D"https://enerdata.us6.list-manage=
+=2Ecom/track/click?u=3D60b4d4ddea6b0d026cc71e519&id=3Dc55c14d5a6&e=3D=
+77999c69ba" target=3D"_blank" title=3D"Privacy Policy" style=3D"mso-line-height-=
+rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;co=
+lor: #656565;font-weight: normal;text-decoration: underline;">Privacy Poli=
+cy</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"210" style=3D"width:210px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 210px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding: 0px=
+ 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #65=
+6565;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 11px=
+;line-height: 150%;" valign=3D"top">
+<strong>E-mail Filter</strong>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"390" style=3D"width:390px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 390px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding: 0px=
+ 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #65=
+6565;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 11px=
+;line-height: 150%;" valign=3D"top">
+ Please add the e-mail addresses "<a href=3D"mailto:comms@enerdata.pro" ta=
+rget=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-size-adjus=
+t: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight: normal;=
+text-decoration: underline;">comms@enerdata.pro</a>" and "<a href=3D"mailt=
+o:research@enerdata.net" target=3D"_blank" style=3D"mso-line-height-rule:=
+ exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:=
+ #656565;font-weight: normal;text-decoration: underline;">research@enerdat=
+a.net</a>" to your list of approved senders to ensure you receive our e-ma=
+ils.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"210" style=3D"width:210px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 210px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding: 0px=
+ 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #65=
+6565;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 11px=
+;line-height: 150%;" valign=3D"top">
+<strong>E-mail Content</strong>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"390" style=3D"width:390px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 390px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding: 0px=
+ 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #65=
+6565;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 11px=
+;line-height: 150%;" valign=3D"top">
+ This newsletter belongs to Enerdata and its content must not be republish=
+ed by third parties in any form without <a href=3D"mailto:research@enerdat=
+a.net" target=3D"_blank" style=3D"mso-line-height-rule: exactly;-ms-text-s=
+ize-adjust: 100%;-webkit-text-size-adjust: 100%;color: #656565;font-weight=
+: normal;text-decoration: underline;">written permission</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"210" style=3D"width:210px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 210px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding: 0px=
+ 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #65=
+6565;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 11px=
+;line-height: 150%;" valign=3D"top">
+<strong>Unsubscribe</strong>
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"390" style=3D"width:390px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 390px;border-collapse: collapse=
+;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-w=
+ebkit-text-size-adjust: 100%;" class=3D"mcnTextContentContainer" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding: 0px=
+ 18px 9px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adj=
+ust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #65=
+6565;font-family: Tahoma=2C Verdana=2C Segoe=2C sans-serif;font-size: 11px=
+;line-height: 150%;" valign=3D"top">
+ If you do not wish to receive e-mails of this type=2C you can <a href=3D"=
+https://enerdata.us6.list-manage.com/unsubscribe?u=3D60b4d4ddea6b0d026cc71=
+e519&id=3D838b1c9d18&e=3D77999c69ba&c=3D3813c7e4f1" style=3D"mso-line-height=
+-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;c=
+olor: #656565;font-weight: normal;text-decoration: underline;">unsubscribe=
+ from this list</a>.
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table class=3D"mcnTextBlock" style=3D"min-width: 100%;border-coll=
+apse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-a=
+djust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+    <tbody class=3D"mcnTextBlockOuter">
+        <tr>
+            <td class=3D"mcnTextBlockInner" style=3D"padding-top: 9px;mso-=
+line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;" valign=3D"top">
+              =09<!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]-->
+=09=09=09
+=09=09=09=09<!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"600" style=3D"width:600px;">
+=09=09=09=09<![endif]-->
+                <table style=3D"max-width: 100%;min-width: 100%;border-col=
+lapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-=
+adjust: 100%;-webkit-text-size-adjust: 100%;" class=3D"mcnTextContentConta=
+iner" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" alig=
+n=3D"left">
+                    <tbody><tr>
+
+                        <td class=3D"mcnTextContent" style=3D"padding-top:=
+ 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-hei=
+ght-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100=
+%;word-break: break-word;color: #656565;font-family: Tahoma=2C Verdana=2C=
+ Segoe=2C sans-serif;font-size: 11px;line-height: 150%;text-align: center;=
+" valign=3D"top">
+                        </td>
+                    </tr>
+                </tbody></table>
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]-->
+
+=09=09=09=09<!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<!--[if (gte mso 9)|(IE)]>
+=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09</td>
+                            </tr>
+                        </table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </table>
+        </center>
+    <img src=3D"https://enerdata.us6.list-manage.com/track/open.php?u=3D60=
+b4d4ddea6b0d026cc71e519&id=3D3813c7e4f1&e=3D77999c69ba" height=3D"1" widt=
+h=3D"1"></body>
+</html>
+--_----------=_MCPart_55788326--

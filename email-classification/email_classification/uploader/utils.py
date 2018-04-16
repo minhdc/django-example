@@ -104,6 +104,15 @@ def move_copied_email_to_treasure(src,treasure_path,email_file_name,dst=None):
         print("dup")
 
 
+def get_message_content_in_email_file(main_store,email_file_name):
+    email_object = message_from_file(open(os.path.join(main_store,email_file_name),"r"))
+    if email_object.is_multipart():
+        for each_element in email_object.walk():
+            if each_element.get_content_type() == "text/plain":
+                return each_element.get_payload()
+    return None
+
+
 def do_the_classification_job(current_eml_path,treasure_path,eml_key_to_search):
     email_list = get_list_of_incoming_emails(current_eml_path)
 

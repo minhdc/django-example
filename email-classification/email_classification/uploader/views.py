@@ -1,5 +1,4 @@
 import os
-
 from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
 from django.core.files import File
@@ -38,11 +37,24 @@ def home(request):
     do_the_classification_job(input_eml_path,backup_path,eml_key_to_search)
 
     current_dirs_list = get_list_of_current_dirs("mainstore")
-    
-    return render(request,'uploader/home.html',{'current_dirs_list':current_dirs_list})
+    emails_in_dir = []
+    dict_of_emails = {}
+    #get list of emails in current dir - buggy!!! need to reset email list
+    for each_dir in current_dirs_list:
+        emails_in_dir.append(get_list_of_incoming_emails(os.path.join(main_path,each_dir)))                
+        dict_of_emails.update({each_dir:emails_in_dir})        
+        emails_in_dir = []    
+
+    return render(request,'uploader/home.html',{'current_dirs_list':current_dirs_list,'dict_of_emails':dict_of_emails})
 
 
-def list_emails_in_current_dir(request):
+def emails_in_dir(request):
     ''''''
     main_path = "mainstore"
-    current_email_list = get_list_of_incoming_emails(main_path)
+    current_dirs_list = get_list_of_current_dirs("mainstore")
+    emails_in_dir = []
+    for each_dir in current_dirs_list:
+        emails_in_dir.append(get_list_of_incoming_emails(os.path.join(main_path,each_dir)))
+        print("emails: ",get_list_of_incoming_emails(os.path.join(main_path,each_dir)))
+
+    return render(request,'uploader/emails_in_dir.html',{'emails_in_dir':emails_in_dir})

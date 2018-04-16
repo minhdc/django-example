@@ -5,7 +5,7 @@ from django.core.files import File
 
 from .forms import EmailUploadForm
 from .models import Email
-from .utils import count_eml_files, do_the_classification_job, count_directory, get_list_of_current_dirs, get_list_of_incoming_emails
+from .utils import count_eml_files, do_the_classification_job, count_directory, get_list_of_current_dirs, get_list_of_incoming_emails, get_message_content_in_email_file
 
 
 # Create your views here.
@@ -46,6 +46,13 @@ def home(request):
         emails_in_dir = []    
 
     return render(request,'uploader/home.html',{'current_dirs_list':current_dirs_list,'dict_of_emails':dict_of_emails})
+
+
+def show_email_payload(request):
+    main_path = "mainstore"
+    file_name = ""
+    email_payload = get_message_content_in_email_file(main_path,file_name)
+    return render(request,{'email_payload':email_payload})
 
 
 def emails_in_dir(request):

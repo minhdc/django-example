@@ -1,7 +1,9 @@
 import os
+
 from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
 from django.core.files import File
+from django.http import HttpResponse
 
 from .forms import EmailUploadForm
 from .models import Email
@@ -49,10 +51,16 @@ def home(request):
 
 
 def show_email_payload(request):
-    main_path = "mainstore"
-    file_name = ""
-    email_payload = get_message_content_in_email_file(main_path,file_name)
-    return render(request,{'email_payload':email_payload})
+    ''' fvck this thing'''
+    if request.method == "GET":
+        main_path = "mainstore"
+        file_name = request.GET["file_name"]
+        parent = request.GET["parent"]
+        print("email file name: ",file_name)
+        email_payload = get_message_content_in_email_file(main_path,os.path.join(parent,file_name))
+        return HttpResponse(email_payload,content_type="text/plain")
+    else:        
+        return HttpResponse("Request method isn't GET . Fvck yo")
 
 
 def emails_in_dir(request):

@@ -19,9 +19,9 @@
 
   <script type="text/javascript">
     $(function () {
-      function logEvent(event, data, msg){
-        msg = msg ? ": " +msg :" ";
-        $.ui.fancytree.info("Event ('" + event.type + "', node = " + data.node + ") "+msg);        
+      function logEvent(event, data, msg) {
+        msg = msg ? ": " + msg : " ";
+        $.ui.fancytree.info("Event ('" + event.type + "', node = " + data.node + ") " + msg);
       }
 
       $("#directoryList").fancytree({
@@ -35,10 +35,23 @@
         },
 
         //handle clicking event on node
-        activate: function(event,data){
-          logEvent(event,data);
-          var node = data.node;   
-          alert(node.title + "______" + node.parent.title);
+        activate: function (event, data) {
+          logEvent(event, data);
+          var node = data.node;
+          if (node.parent.title != "root") {
+            $.ajax({
+              type: "GET",
+              url: "show_email_payload",
+              data: {
+                file_name: node.title,
+                parent: node.parent.title
+              },
+              success: function (data) {
+                alert("Email payload:\n"+data+"\n----END----");
+                
+              }
+            })
+          }
         },
       });
     })
@@ -105,15 +118,10 @@
             <li class="folder">
               {{each_dir}}
               <ul style="display: none">
-                {%for k,v in dict_of_emails.items%}
-                  {% if k == each_dir %}
-                    {% for shit in v %}
-                      {% for s in shit %}
-                        <li id={{s}} class = "emailfile">{{s}}</a></li>
-                      {% endfor %} 
-                    {% endfor %}        
-                  {% endif %}                  
-                {% endfor %}    
+                {%for k,v in dict_of_emails.items%} {% if k == each_dir %} {% for shit in v %} {% for s in shit %}
+                <li id={{s}} class="emailfile">{{s}}</a>
+                </li>
+                {% endfor %} {% endfor %} {% endif %} {% endfor %}
               </ul>
             </li>
             {% endfor %}
@@ -122,7 +130,7 @@
       </div>
       <!--DIR LIST END-->
       <div class="col-12 col-sm-12 col-md-8 col-lg-9">
-
+        <p id="emailPayload"></p>
       </div>
     </div>
 

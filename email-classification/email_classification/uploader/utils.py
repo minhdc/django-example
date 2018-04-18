@@ -25,11 +25,14 @@ def get_email_object(path_to_eml_file,file_name):
     return message_from_file(open(path_to_eml_file+os.sep+file_name,"r",encoding="ISO-8859-1"))
 
 
-def extract_from_address_in_payload(email_object,eml_key_to_search):
+def extract_from_address_in_payload(email_object):
     start_point = 0
     stop_point = 0
-    email_payload_as_string = email_object[eml_key_to_search]
-
+    
+    #email_payload_as_string = email_object[eml_key_to_search]
+    #refactor to find "FROM address"
+    email_payload_as_string = str(email_object.get_payload()[0])
+    
     try:
         start_point = email_payload_as_string.index('<')
         stop_point = email_payload_as_string.index('>')
@@ -39,7 +42,7 @@ def extract_from_address_in_payload(email_object,eml_key_to_search):
     extracted_from_address = []
     for i in range(start_point+1,stop_point):
         extracted_from_address.append(email_payload_as_string[i])
-
+    
     return ''.join(extracted_from_address)
 
 
@@ -79,7 +82,8 @@ def get_email_addr_from_obfuscated_string(obfuscated_string):
 
 def create_email_storing_folder_if_not_exists(folder_name,folder_path):
     try:
-        if os.listdir(os.path.join(folder_path,folder_name)):
+        check = os.listdir(os.path.join(folder_path,folder_name))
+        if check:
             print("folder %s already exists"%folder_name)
     except FileNotFoundError as err:
         os.mkdir(os.path.join(folder_path,folder_name))
@@ -118,7 +122,7 @@ def do_the_classification_job(current_eml_path,treasure_path,eml_key_to_search):
 
     if email_list is not None:
         for each_mail in email_list:
-            from_addr = extract_from_address_in_payload(get_email_object(current_eml_path,each_mail), eml_key_to_search)
+            from_addr = extract_from_address_in_payload(get_email_object(current_eml_path,each_mail))            
             create_email_storing_folder_if_not_exists(from_addr, "mainstore")
             copy_email_to_storing_folder(current_eml_path, os.path.join("mainstore",from_addr), each_mail)
             move_copied_email_to_treasure(current_eml_path, treasure_path, each_mail)

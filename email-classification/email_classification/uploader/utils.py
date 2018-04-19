@@ -21,11 +21,26 @@ def count_directory(path):
     return dir_counts
 
 
-def get_email_object(path_to_eml_file,file_name):
-    return message_from_file(open(path_to_eml_file+os.sep+file_name,"r",encoding="ISO-8859-1"))
+def get_email_object(path_to_eml_file, file_name):
+    return message_from_file(open(path_to_eml_file+os.sep+file_name, "r", encoding="ISO-8859-1"))
 
 
-def extract_from_address_in_payload(email_object):
+def extract_value_in_header(email_object, header_key_to_extract):
+    email_header_value = email_object[header_key_to_extract]
+    try:
+        start_point = email_header_value.index('<')
+        stop_point = email_header_value.index('>')
+    except ValueError as verr:
+        return "shit"
+    from_address_in_header = []
+    for i in range(start_point+1,stop_point):
+        from_address_in_header.append(email_header_value[i])
+    print("header: ")
+    print(''.join(from_address_in_header))
+    return ''.join(from_address_in_header)
+
+
+def extract_from_address_in_payload(email_object, header_key_to_extract):
     start_point = 0
     stop_point = 0
     
@@ -36,14 +51,23 @@ def extract_from_address_in_payload(email_object):
     try:
         start_point = email_payload_as_string.index('<')
         stop_point = email_payload_as_string.index('>')
-    except ValueError as verr:
-        return email_payload_as_string
+        #buggy way to handle tags    
+        if (stop_point - start_point) >= 40:            
+            return extract_value_in_header(email_object,"From")
+    except (ValueError,OSError) as verr:        
+        print(verr)
 
     extracted_from_address = []
     for i in range(start_point+1,stop_point):
-        extracted_from_address.append(email_payload_as_string[i])
-    
-    return ''.join(extracted_from_address)
+        extracted_from_address.append(email_payload_as_string[i])    
+    if '@' not in extracted_from_address:
+        return extract_value_in_header(email_object,"From")
+    print("payload: ")
+    print(''.join(extracted_from_address))
+    #bad solution to remove newline character in from address string
+    result = ''.join(extracted_from_address)
+    result = result.strip('\n')
+    return result
 
 
 def get_list_of_incoming_emails(current_eml_path):
@@ -84,7 +108,8 @@ def create_email_storing_folder_if_not_exists(folder_name,folder_path):
     try:
         check = os.listdir(os.path.join(folder_path,folder_name))
         if check:
-            print("folder %s already exists"%folder_name)
+            print("")
+            #print("folder %s already exists"%folder_name)
     except FileNotFoundError as err:
         os.mkdir(os.path.join(folder_path,folder_name))
         print("created storing folder %s at %s"%(folder_name,os.getcwd()))
@@ -105,7 +130,8 @@ def move_copied_email_to_treasure(src,treasure_path,email_file_name,dst=None):
     try:
         shutil.move(os.path.join(src,email_file_name),treasure_path)
     except shutil.Error as e:
-        print("dup")
+        print("")
+        #print("dup")
 
 
 def get_message_content_in_email_file(main_store,email_file_name):
@@ -122,7 +148,8 @@ def do_the_classification_job(current_eml_path,treasure_path,eml_key_to_search):
 
     if email_list is not None:
         for each_mail in email_list:
-            from_addr = extract_from_address_in_payload(get_email_object(current_eml_path,each_mail))            
+            #from_addr = extract_from_address_in_payload(get_email_object(current_eml_path,each_mail),"From")            
+            from_addr = extract_value_in_header(get_email_object(current_eml_path,each_mail),"From")
             create_email_storing_folder_if_not_exists(from_addr, "mainstore")
             copy_email_to_storing_folder(current_eml_path, os.path.join("mainstore",from_addr), each_mail)
             move_copied_email_to_treasure(current_eml_path, treasure_path, each_mail)

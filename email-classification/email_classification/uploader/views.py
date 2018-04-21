@@ -36,8 +36,10 @@ def home(request):
     backed_up_email_counts = count_eml_files(backup_path)
     email_dir_counts = count_directory(main_path)
 
-    do_the_classification_job(input_eml_path,backup_path,eml_key_to_search)
+    if count_eml_files(input_eml_path) != 0:
+        do_the_classification_job(input_eml_path,backup_path,eml_key_to_search)
 
+   
     current_dirs_list = get_list_of_current_dirs("mainstore")
     emails_in_dir = []
     dict_of_emails = {}

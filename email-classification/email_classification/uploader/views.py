@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 from .forms import EmailUploadForm
 from .models import Email
-from .utils import count_eml_files, do_the_classification_job, count_directory, get_list_of_current_dirs, get_list_of_incoming_emails, get_message_content_in_email_file
+from .utils import count_eml_files, do_the_classification_job, count_directory, get_list_of_current_dirs, get_list_of_incoming_emails, get_message_content_in_email_file,process_attachment
 
 
 # Create your views here.
@@ -63,6 +63,17 @@ def show_email_payload(request):
         return HttpResponse(email_payload,content_type="text/plain")
     else:        
         return HttpResponse("Request method isn't GET . Fvck yo")
+        
+
+def do_the_attachment_job(request):
+    if request.method == "GET":
+        main_path = "mainstore"
+        folder_name = request.GET["folder_name"]
+        process_attachment(os.path.join(main_path,folder_name))
+        print("successed in attachment extraction")
+        return HttpResponse("good")
+    else:
+        return HttpResponse("Request method isn't GET. fvckyooo")
 
 
 def emails_in_dir(request):
@@ -75,3 +86,16 @@ def emails_in_dir(request):
         print("emails: ",get_list_of_incoming_emails(os.path.join(main_path,each_dir)))
 
     return render(request,'uploader/emails_in_dir.html',{'emails_in_dir':emails_in_dir})
+
+
+def dirs_in_dir(request):
+    ''''''
+    main_path = "mainstore"
+    dirs_in_dir = []
+    if request.method == "GET":
+        current_dir = request.GET["current_dir"]
+        for each_element in os.listdir(os.path.join(main_path,current_dir)):
+            if os.path.isdir(os.path.join(main_path,current_dir,each_element)):
+                dirs_in_dir.append(each_element)
+    
+    return HttpResponse(dirs_in_dir)

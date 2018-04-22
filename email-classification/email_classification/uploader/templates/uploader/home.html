@@ -36,7 +36,6 @@
 
         //handle clicking event on node
         activate: function (event, data) {
-          logEvent(event, data);
           var node = data.node;
           if (node.parent.title != "root") {
             $.ajax({
@@ -47,13 +46,36 @@
                 parent: node.parent.title
               },
               success: function (data) {
-                alert("Email payload:\n"+data+"\n----END----");
-                
+                alert("Email payload:\n" + data + "\n----END----");
+              }
+            });
+
+          } else {
+            $.ajax({  //do the attachment job
+              type: "GET",
+              url: "do_the_attachment_job",
+              data: {
+                folder_name: node.title,
+              },
+            })
+            $.ajax({  // return list of dirs in current dir
+              type: "GET",
+              url: "dirs_in_dir",
+              data: {
+                current_dir: node.title,
+              },
+              success: function (list_of_dir) {
+                if (list_of_dir != []) {
+                  // how to show the dirs
+                  alert(list_of_dir);
+                }
               }
             })
           }
         },
       });
+
+
     })
 
   </script>
@@ -63,7 +85,7 @@
 <body>
   <div class="container-fluid">
     <!--NAV BAR-->
-    <!--
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#" style="align:center">Lọc dữ liệu thư điện tử</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -103,13 +125,12 @@
         </form>
       </div>
     </nav>
-    <! NAV BAR END-->
+    <!-- NAV BAR END-->
 
     {% block content %}
 
 
-
-    <!--DIR LIST-->
+    <!-- DIR LIST -->
     <div class="row">
       <div class="col-12 col-sm-12 col-md-4 col-lg-3">
         <div id="directoryList">

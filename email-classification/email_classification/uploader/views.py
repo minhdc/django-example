@@ -41,13 +41,21 @@ def home(request):
 
    
     current_dirs_list = get_list_of_current_dirs("mainstore")
-    emails_in_dir = []
+    emails_in_dir = {}
+    dirs_in_dir = []
+    child_dirs_in_dir = []
     dict_of_emails = {}
     #get list of emails in current dir - buggy!!! need to reset email list
     for each_dir in current_dirs_list:
-        emails_in_dir.append(get_list_of_incoming_emails(os.path.join(main_path,each_dir)))                
+        #   emails_in_dir.append(get_list_of_incoming_emails(os.path.join(main_path,each_dir)))  
+        dirs_in_dir = get_list_of_current_dirs(os.path.join(main_path,each_dir))
+        for cdir in dirs_in_dir:
+            child_dirs_in_dir.append(os.listdir(os.path.join(main_path,os.path.join(each_dir,cdir))))
+            emails_in_dir.update({cdir:child_dirs_in_dir})
+       
         dict_of_emails.update({each_dir:emails_in_dir})        
-        emails_in_dir = []    
+        #dict_of_emails.update({each_dir:dirs_in_dir})  
+        emails_in_dir = []           
 
     return render(request,'uploader/home.html',{'current_dirs_list':current_dirs_list,'dict_of_emails':dict_of_emails})
 
@@ -76,16 +84,7 @@ def do_the_attachment_job(request):
         return HttpResponse("Request method isn't GET. fvckyooo")
 
 
-def emails_in_dir(request):
-    ''''''
-    main_path = "mainstore"
-    current_dirs_list = get_list_of_current_dirs("mainstore")
-    emails_in_dir = []
-    for each_dir in current_dirs_list:
-        emails_in_dir.append(get_list_of_incoming_emails(os.path.join(main_path,each_dir)))
-        print("emails: ",get_list_of_incoming_emails(os.path.join(main_path,each_dir)))
 
-    return render(request,'uploader/emails_in_dir.html',{'emails_in_dir':emails_in_dir})
 
 
 def dirs_in_dir(request):
@@ -94,8 +93,9 @@ def dirs_in_dir(request):
     dirs_in_dir = []
     if request.method == "GET":
         current_dir = request.GET["current_dir"]
+        print("current_dir : ",current_dir)
         for each_element in os.listdir(os.path.join(main_path,current_dir)):
             if os.path.isdir(os.path.join(main_path,current_dir,each_element)):
                 dirs_in_dir.append(each_element)
     
-    return HttpResponse(dirs_in_dir)
+    return render(request,"uploader/home.html",{'dirs_in_dir':dirs_in_dir})

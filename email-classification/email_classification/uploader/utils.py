@@ -94,9 +94,8 @@ def get_list_of_incoming_emails(current_eml_path):
     email_list = []
     for each_element in os.listdir(current_eml_path):
         if each_element.endswith(".eml"):
-            email_list.append(each_element)
-    if not email_list:
-        return None
+            email_list.append(each_element)    
+    print("email list = ",email_list)
     return email_list
 
 
@@ -217,17 +216,23 @@ def do_the_classification_job(current_eml_path, treasure_path, eml_key_to_search
 
 def process_attachment(current_eml_path):
     email_list = get_list_of_incoming_emails(current_eml_path)
-    for each_mail in email_list:
-        email_object = message_from_file(open(os.path.join(current_eml_path, each_mail), "r"))
-        if has_attachment(email_object._headers):
-            list_attachment = get_multiple_attachment(email_object)
-            write_multiple_attachment(list_attachment, current_eml_path, each_mail.strip(".eml"))
-            # move eml to folder
-            try:
-                shutil.move(os.path.join(current_eml_path, each_mail), os.path.join(current_eml_path,each_mail.strip(".eml")))
-            except shutil.Error as e:
-                print("move eml error")
-            print("got 1 attachment")
+    print("email-list",email_list)
+    try:
+        for each_mail in email_list:
+            email_object = message_from_file(open(os.path.join(current_eml_path, each_mail), "r"))
+            if has_attachment(email_object._headers):
+                list_attachment = get_multiple_attachment(email_object)
+                write_multiple_attachment(list_attachment, current_eml_path, each_mail.strip(".eml"))
+                try:
+                    shutil.move(os.path.join(current_eml_path, each_mail), os.path.join(current_eml_path,each_mail.strip(".eml")))
+                except shutil.Error as e:
+                    print("move eml error")
+                    print("got 1 attachment")                
+    except TypeError as err:
+        pass
+    # move eml to folder
+    
+
 
 
 def get_list_of_current_dirs(current_path):
@@ -236,5 +241,6 @@ def get_list_of_current_dirs(current_path):
     '''
     current_dirs = []
     for each_element in os.listdir(current_path):
-        current_dirs.append(each_element)
+            if os.path.isdir(os.path.join(current_path,each_element)):
+                current_dirs.append(each_element)
     return current_dirs

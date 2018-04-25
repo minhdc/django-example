@@ -51,14 +51,14 @@
             });
 
           } else {
-            $.ajax({  //do the attachment job
+            $.ajax({ //do the attachment job
               type: "GET",
               url: "do_the_attachment_job",
               data: {
                 folder_name: node.title,
               },
             })
-            $.ajax({  // return list of dirs in current dir
+            $.ajax({ // return list of dirs in current dir
               type: "GET",
               url: "dirs_in_dir",
               data: {
@@ -67,7 +67,7 @@
               success: function (list_of_dir) {
                 if (list_of_dir != []) {
                   // how to show the dirs - done in views 
-                                
+
                 }
               }
             })
@@ -136,28 +136,28 @@
         <div id="directoryList">
           <ul id="treeData" style="display: none;">
             {% for each_dir in current_dirs_list %}
-            <li class="folder" >
-              {{each_dir}}          
+            <li class="folder">
+              {{each_dir}}
               <ul style="display: none" id="childDir">
                 {%for k,v in dict_of_emails.items%} 
                   {% if k == each_dir %} 
-                    {% for shit in v %} 
-                      {% for s in shit %}
-                      {% if ".eml" in s %}
-                        <li id={{s}} class="emailfile">{{s}}</li>
-                      {% else %}
-                        <li id={{s}} class="folder">{{s}}</li>
-                        <ul style="display:none" id="superChildDir">
-                          {% for file in s %}
-                            <li id={{file}} class="file">{{file}}</li>
-                          {% endfor %}
-                        </ul>
-                      {% endif %}                               
-                     {% endfor %} 
+                    {% for 1st_child in v %} 
+                      {% for 2nd_child,3rd_child in 1st_child.items %} 
+                        {% if ".eml" in 2nd_child %}
+                          <li id={{s}} class="emailfile">{{2nd_child}}</li>
+                        {% else %}
+                          <li id={{s}} class="folder">{{2nd_child}}</li>
+                          <ul id="superChildDir">
+                            {% for each_attch in 3rd_child %}
+                            <li id={{file}} class="file">{{each_attch}}</li>
+                            {% endfor %}
+                          </ul>
+                        {% endif %} 
+                      {% endfor %} 
                     {% endfor %} 
                   {% endif %} 
                 {% endfor %}
-              </ul>              
+              </ul>
             </li>
             {% endfor %}
           </ul>

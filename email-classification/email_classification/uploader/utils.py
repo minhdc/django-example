@@ -95,7 +95,7 @@ def get_list_of_incoming_emails(current_eml_path):
     for each_element in os.listdir(current_eml_path):
         if each_element.endswith(".eml"):
             email_list.append(each_element)    
-    print("email list = ",email_list)
+    #print("email list = ",email_list)
     return email_list
 
 

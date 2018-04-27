@@ -48,24 +48,26 @@ def home(request):
     #get list of emails in current dir - buggy!!! need to reset email list
     for each_1st_dir in root_dirs_list:        
         print("1st_dir :",each_1st_dir)
-        list_of_2nd_dirs = get_list_of_current_dirs(os.path.join(main_path,each_1st_dir))        
+        list_of_2nd_dirs = get_list_of_current_dirs(os.path.join(main_path,each_1st_dir))
+        list_of_2nd_dirs = list_of_2nd_dirs + (get_list_of_incoming_emails(os.path.join(main_path,each_1st_dir)))        
         #look for attachment...
         for each_2nd_dir in list_of_2nd_dirs:
             print("\t2nd_dir: ",each_2nd_dir)
-            list_of_3rd_dirs.append(os.listdir(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))))                        
-            email_in_dir[each_2nd_dir]=[list_of_3rd_dirs]
+            if ".eml" not in each_2nd_dir:
+                list_of_3rd_dirs.append(os.listdir(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))))  
+                list_of_3rd_dirs.append(get_list_of_incoming_emails(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))))                      
+                email_in_dir[each_2nd_dir]=[list_of_3rd_dirs]
             if each_1st_dir in dict_of_emails:
-                dict_of_emails[each_1st_dir].append(email_in_dir)
+                dict_of_emails[each_1st_dir].append(email_in_dir)            
             else:
                 dict_of_emails[each_1st_dir] = [email_in_dir]
             print("dict of email ",dict_of_emails)
             print("--------")
-            #reset
-            print("\t\t content: ",email_in_dir)
+            #reset            
             email_in_dir = {}
             list_of_3rd_dirs = []
 
-
+    print(root_dirs_list)
     return render(request,'uploader/home.html',{'current_dirs_list':root_dirs_list,'dict_of_emails':dict_of_emails})
 
 
@@ -107,4 +109,4 @@ def dirs_in_dir(request):
             if os.path.isdir(os.path.join(main_path,current_dir,each_element)):
                 dirs_in_dir.append(each_element)
     
-    return render(request,"uploader/home.html",{'dirs_in_dir':dirs_in_dir})
+    return HttpResponse(dirs_in_dir)

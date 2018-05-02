@@ -124,30 +124,34 @@
               {% for 1st_child, 2nd_child_list in dict_of_emails.items %}
               <li class="folder">
                 {{1st_child}}
-                <ul>
-                    {% if '.' in 2nd_child_list %}
-                      <li class="file">{{2nd_child_list}}</li>
-                    {% else %}
+                {% if '.' in 2nd_child_list %}
+                  <ul><li class="file">{{2nd_child_list}}</li></ul>
+                {% else %}
+                  <ul>                   
                       {% for each_dict in 2nd_child_list %}
-                        {% for 2nd_child,3rd_child_list in each_dict.items  %}                        
-                            <li class="folder">{{2nd_child}}                        
-                              <ul>
-                                {% for each_virtual_child in 3rd_child_list  %}                                               
-                                  {% for each_3rd_child in each_virtual_child %}
-                                    {% if '.' not in each_3rd_child %}
-                                      <li class="folder">{{each_3rd_child}}</li>
-                                    {% else %}
-                                      <li class="file">{{each_3rd_child}}</li>
-                                    {% endif %}                                
-                                  {% endfor %}
-                                {% endfor %}
-                              </ul>                        
-                            </li>                                           
-                        {% endfor %}
-                      {% endfor %}  
-                    {% endif %}                  
-                           
-                </ul>
+                        {% if '.' in each_dict %}
+                          <li class="file">{{each_dict}}</li>
+                        {% else %}
+                          {% for 2nd_child,3rd_child_list in each_dict.items  %}                        
+                                <li class="folder">{{2nd_child}}                        
+                                  <ul>
+                                    {% for each_virtual_child in 3rd_child_list  %}                                               
+                                      {% for each_3rd_child in each_virtual_child %}
+                                        {% if '.' not in each_3rd_child %}
+                                          <li class="folder">{{each_3rd_child}}</li>
+                                        {% else %}
+                                          <li class="file">{{each_3rd_child}}</li>
+                                        {% endif %}                                
+                                      {% endfor %}
+                                    {% endfor %}
+                                  </ul>                        
+                                </li>                                           
+                          {% endfor %}                         
+                        {% endif %}  
+                      {% endfor %}                                                         
+                  </ul>
+                {% endif %}
+                
               </li>
               {% endfor %}            
           </ul>

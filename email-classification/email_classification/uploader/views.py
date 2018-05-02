@@ -46,13 +46,11 @@ def home(request):
     dict_of_emails = {}
     email_in_dir = {}
     #get list of emails in current dir - buggy!!! need to reset email list
-    for each_1st_dir in root_dirs_list:        
-        print("current 1st_dir :",each_1st_dir)
+    for each_1st_dir in root_dirs_list:            
         list_of_2nd_dirs = get_list_of_current_dirs(os.path.join(main_path,each_1st_dir))
         list_of_2nd_dirs = list_of_2nd_dirs + (get_list_of_incoming_emails(os.path.join(main_path,each_1st_dir)))    
         #look for attachment...
-        for each_2nd_dir in list_of_2nd_dirs:
-            print("\tcurrent 2nd_dir: ",each_2nd_dir)
+        for each_2nd_dir in list_of_2nd_dirs:            
             if ".eml" not in each_2nd_dir:
                 list_of_3rd_dirs = os.listdir(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir)))
                 #if get_list_of_incoming_emails(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))):

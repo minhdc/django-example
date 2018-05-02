@@ -116,18 +116,37 @@
     <! NAV BAR END-->
 
     {% block content %}
-
-
     <!-- DIR LIST -->
     <div class="row">
       <div class="col-12 col-sm-12 col-md-4 col-lg-3">
         <div id="directoryList">
           <ul id="treeData" style="display: none;">
-              {% for 1st_child, 2nd_child_dict in dict_of_emails.items %}
+              {% for 1st_child, 2nd_child_list in dict_of_emails.items %}
               <li class="folder">
                 {{1st_child}}
                 <ul>
-
+                    {% if '.' in 2nd_child_list %}
+                      <li class="file">{{2nd_child_list}}</li>
+                    {% else %}
+                      {% for each_dict in 2nd_child_list %}
+                        {% for 2nd_child,3rd_child_list in each_dict.items  %}                        
+                            <li class="folder">{{2nd_child}}                        
+                              <ul>
+                                {% for each_virtual_child in 3rd_child_list  %}                                               
+                                  {% for each_3rd_child in each_virtual_child %}
+                                    {% if '.' not in each_3rd_child %}
+                                      <li class="folder">{{each_3rd_child}}</li>
+                                    {% else %}
+                                      <li class="file">{{each_3rd_child}}</li>
+                                    {% endif %}                                
+                                  {% endfor %}
+                                {% endfor %}
+                              </ul>                        
+                            </li>                                           
+                        {% endfor %}
+                      {% endfor %}  
+                    {% endif %}                  
+                           
                 </ul>
               </li>
               {% endfor %}            

@@ -40,34 +40,45 @@ def home(request):
         do_the_classification_job(input_eml_path,backup_path,eml_key_to_search)
 
     
-    root_dirs_list = get_list_of_current_dirs("mainstore")    
+    root_dirs_list = get_list_of_current_dirs("mainstore")    # root = 1st dir list 
     list_of_2nd_dirs = []
     list_of_3rd_dirs = []
     dict_of_emails = {}
     email_in_dir = {}
     #get list of emails in current dir - buggy!!! need to reset email list
     for each_1st_dir in root_dirs_list:        
-        print("1st_dir :",each_1st_dir)
+        print("current 1st_dir :",each_1st_dir)
         list_of_2nd_dirs = get_list_of_current_dirs(os.path.join(main_path,each_1st_dir))
-        list_of_2nd_dirs = list_of_2nd_dirs + (get_list_of_incoming_emails(os.path.join(main_path,each_1st_dir)))        
+        list_of_2nd_dirs = list_of_2nd_dirs + (get_list_of_incoming_emails(os.path.join(main_path,each_1st_dir)))    
         #look for attachment...
         for each_2nd_dir in list_of_2nd_dirs:
-            print("\t2nd_dir: ",each_2nd_dir)
+            print("\tcurrent 2nd_dir: ",each_2nd_dir)
             if ".eml" not in each_2nd_dir:
-                list_of_3rd_dirs.append(os.listdir(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))))  
-                list_of_3rd_dirs.append(get_list_of_incoming_emails(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))))                      
-                email_in_dir[each_2nd_dir]=[list_of_3rd_dirs]
+                list_of_3rd_dirs = os.listdir(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir)))
+                #if get_list_of_incoming_emails(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))):
+                #    list_of_3rd_dirs.append(get_list_of_incoming_emails(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))))                      
+                email_in_dir[each_2nd_dir]=[list_of_3rd_dirs]            
+                             
             if each_1st_dir in dict_of_emails:
-                dict_of_emails[each_1st_dir].append(email_in_dir)            
+                if email_in_dir:
+                    dict_of_emails[each_1st_dir].append(email_in_dir)            
+                else:
+                    dict_of_emails[each_1st_dir].append(each_2nd_dir)
             else:
-                dict_of_emails[each_1st_dir] = [email_in_dir]
+                if email_in_dir:
+                    dict_of_emails[each_1st_dir] = [email_in_dir]
+                else:
+                    dict_of_emails[each_1st_dir] = each_2nd_dir
+
+            print("\n\n--------")
             print("dict of email ",dict_of_emails)
-            print("--------")
+            print("--------\n\n")
             #reset            
             email_in_dir = {}
             list_of_3rd_dirs = []
 
-    print(root_dirs_list)
+
+    print("root dir list: ",root_dirs_list)                                                                                                                                                
     return render(request,'uploader/home.html',{'current_dirs_list':root_dirs_list,'dict_of_emails':dict_of_emails})
 
 

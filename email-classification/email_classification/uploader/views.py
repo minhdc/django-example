@@ -55,39 +55,47 @@ def home(request):
                 list_of_3rd_dirs = os.listdir(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir)))
                 #if get_list_of_incoming_emails(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))):
                 #    list_of_3rd_dirs.append(get_list_of_incoming_emails(os.path.join(main_path,os.path.join(each_1st_dir,each_2nd_dir))))                      
-                email_in_dir[each_2nd_dir]=[list_of_3rd_dirs]            
-                             
+                email_in_dir[each_2nd_dir]=[list_of_3rd_dirs]                               
             if each_1st_dir in dict_of_emails:
                 if email_in_dir:
                     dict_of_emails[each_1st_dir].append(email_in_dir)            
                 else:
-                    dict_of_emails[each_1st_dir].append(each_2nd_dir)
+                    #print("dict of emails : ",dict_of_emails)       
+                    #dict_of_emails[each_1st_dir].append(each_2nd_dir)
+                    if isinstance(dict_of_emails[each_1st_dir],str):
+                        dict_of_emails[each_1st_dir] = []
+                        dict_of_emails[each_1st_dir].append(each_2nd_dir)
+                    else:
+                        dict_of_emails[each_1st_dir].append(each_2nd_dir)
+                    
             else:
                 if email_in_dir:
                     dict_of_emails[each_1st_dir] = [email_in_dir]
                 else:
-                    dict_of_emails[each_1st_dir] = each_2nd_dir
-
-            print("\n\n--------")
-            print("dict of email ",dict_of_emails)
-            print("--------\n\n")
-            #reset            
+                    dict_of_emails[each_1st_dir] = each_2nd_dir          
             email_in_dir = {}
-            list_of_3rd_dirs = []
-
-
-    print("root dir list: ",root_dirs_list)                                                                                                                                                
+            list_of_3rd_dirs = [] 
+        #print("dict of emails : ",dict_of_emails)                                                                                                                                         
     return render(request,'uploader/home.html',{'current_dirs_list':root_dirs_list,'dict_of_emails':dict_of_emails})
 
 
 def show_email_payload(request):
-    ''' fvck this thing'''
+    ''' 
+        need to optimize later
+        open files in folder by clicking 
+    '''
     if request.method == "GET":
         main_path = "mainstore"
         file_name = request.GET["file_name"]
         parent = request.GET["parent"]
-        print("email file name: ",file_name)
-        email_payload = get_message_content_in_email_file(main_path,os.path.join(parent,file_name))
+        older_parent = request.GET["older_parent"]  
+        #print("older parent : ",older_parent)      
+        if older_parent != "root":
+            email_payload = get_message_content_in_email_file(main_path,os.path.join(older_parent,os.path.join(parent,file_name)))
+            #os.system("thunderbird "+str(os.path.join(main_path,os.path.join(older_parent,os.path.join(parent,file_name)))))
+        else:
+            email_payload = get_message_content_in_email_file(main_path,os.path.join(parent,file_name))
+            #os.system("thunderbird "+str(os.path.join(main_path,os.path.join(parent,file_name))))
         return HttpResponse(email_payload,content_type="text/plain")
     else:        
         return HttpResponse("Request method isn't GET . Fvck yo")
@@ -98,7 +106,7 @@ def do_the_attachment_job(request):
         main_path = "mainstore"
         folder_name = request.GET["folder_name"]
         process_attachment(os.path.join(main_path,folder_name))
-        print("successed in attachment extraction")
+        #print("successed in attachment extraction")
         return HttpResponse("good")
     else:
         return HttpResponse("Request method isn't GET. fvckyooo")
@@ -113,7 +121,7 @@ def dirs_in_dir(request):
     dirs_in_dir = []
     if request.method == "GET":
         current_dir = request.GET["current_dir"]
-        print("current_dir : ",current_dir)
+        #print("current_dir : ",current_dir)
         for each_element in os.listdir(os.path.join(main_path,current_dir)):
             if os.path.isdir(os.path.join(main_path,current_dir,each_element)):
                 dirs_in_dir.append(each_element)

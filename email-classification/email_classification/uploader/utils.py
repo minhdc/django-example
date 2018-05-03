@@ -51,8 +51,8 @@ def extract_value_in_header(email_object, header_key_to_extract):
     from_address_in_header = []
     for i in range(start_point+1, stop_point):
         from_address_in_header.append(email_header_value[i])
-    print("header: ")
-    print(''.join(from_address_in_header))
+    #print("header: ")
+    #print(''.join(from_address_in_header))
     return ''.join(from_address_in_header)
 
 
@@ -79,8 +79,8 @@ def extract_from_address_in_payload(email_object, header_key_to_extract):
         extracted_from_address.append(email_payload_as_string[i])
     if '@' not in extracted_from_address:
         return extract_value_in_header(email_object, "From")
-    print("payload: ")
-    print(''.join(extracted_from_address))
+    #print("payload: ")
+    #print(''.join(extracted_from_address))
     # bad solution to remove newline character in from address string
     result = ''.join(extracted_from_address)
     result = result.strip('\n')
@@ -143,7 +143,7 @@ def create_email_storing_folder_if_not_exists(folder_name, folder_path):
             #print("folder %s already exists"%folder_name)
     except FileNotFoundError as err:
         os.mkdir(os.path.join(folder_path, folder_name))
-        print("created storing folder %s at %s" % (folder_name, os.getcwd()))
+        #print("created storing folder %s at %s" % (folder_name, os.getcwd()))
 
 
 def copy_email_to_storing_folder(src, dst, email_file_name):
@@ -194,7 +194,7 @@ def create_folder_for_this_mail(email_object, current_storing_path):
             print("current folder exists")
     except FileNotFoundError as err:
         os.mkdir(os.path.join(current_storing_path, folder_name))
-        print("created storing folder %s at %s" % (folder_name, os.getcwd()))
+        #print("created storing folder %s at %s" % (folder_name, os.getcwd()))
 
 
 def do_the_classification_job(current_eml_path, treasure_path, eml_key_to_search):

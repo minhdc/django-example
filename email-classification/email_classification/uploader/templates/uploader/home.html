@@ -36,20 +36,21 @@
 
         //handle clicking event on node
         activate: function (event, data) {
-          var node = data.node;
-          if (node.parent.title != "root") {
+          var node = data.node;                   
+          if (node.parent.title != "root") {  
+            //o_parent = node.parent;
             $.ajax({
               type: "GET",
               url: "show_email_payload",
               data: {
                 file_name: node.title,
-                parent: node.parent.title
+                parent: node.parent.title,
+                older_parent: node.parent.parent.title,                                
               },
-              success: function (data) {
-                alert("Email payload:\n" + data + "\n----END----");
+              success: function(data){
+                alert(data);
               }
             });
-
           } else {
             $.ajax({ //do the attachment job
               type: "GET",
@@ -58,7 +59,7 @@
                 folder_name: node.title,
               },
             })
-           
+            
           }
         },
       });

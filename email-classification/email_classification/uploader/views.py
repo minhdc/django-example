@@ -60,10 +60,11 @@ def home(request):
                 if email_in_dir:
                     dict_of_emails[each_1st_dir].append(email_in_dir)            
                 else:
-                    #print("dict of emails : ",dict_of_emails)       
-                    #dict_of_emails[each_1st_dir].append(each_2nd_dir)
+                    #init new list, need to optimize...
                     if isinstance(dict_of_emails[each_1st_dir],str):
+                        temp_dir = dict_of_emails[each_1st_dir]
                         dict_of_emails[each_1st_dir] = []
+                        dict_of_emails[each_1st_dir].append(temp_dir)
                         dict_of_emails[each_1st_dir].append(each_2nd_dir)
                     else:
                         dict_of_emails[each_1st_dir].append(each_2nd_dir)
@@ -89,6 +90,7 @@ def show_email_payload(request):
         file_name = request.GET["file_name"]
         parent = request.GET["parent"]
         older_parent = request.GET["older_parent"]  
+        print("older parent: ",older_parent )
         #print("older parent : ",older_parent)      
         if older_parent != "root":
             email_payload = get_message_content_in_email_file(main_path,os.path.join(older_parent,os.path.join(parent,file_name)))
@@ -110,9 +112,6 @@ def do_the_attachment_job(request):
         return HttpResponse("good")
     else:
         return HttpResponse("Request method isn't GET. fvckyooo")
-
-
-
 
 
 def dirs_in_dir(request):

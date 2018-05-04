@@ -52,7 +52,7 @@ def extract_value_in_header(email_object, header_key_to_extract):
     for i in range(start_point+1, stop_point):
         from_address_in_header.append(email_header_value[i])
     #print("header: ")
-    #print(''.join(from_address_in_header))
+    print(''.join(from_address_in_header))
     return ''.join(from_address_in_header)
 
 
@@ -143,7 +143,7 @@ def create_email_storing_folder_if_not_exists(folder_name, folder_path):
             #print("folder %s already exists"%folder_name)
     except FileNotFoundError as err:
         os.mkdir(os.path.join(folder_path, folder_name))
-        #print("created storing folder %s at %s" % (folder_name, os.getcwd()))
+        print("created storing folder %s at %s" % (folder_name, os.getcwd()))
 
 
 def copy_email_to_storing_folder(src, dst, email_file_name):
@@ -154,7 +154,7 @@ def copy_email_to_storing_folder(src, dst, email_file_name):
         try:
             shutil.copy2(os.path.join(src, email_file_name), os.path.join(dst, email_file_name))
         except shutil.Error as e:
-            print("")
+            print("shutil error in copyin email to storing folder")
     else:
         print("already exists")
 
@@ -229,11 +229,10 @@ def process_attachment(current_eml_path):
                     print("move eml error")
                     print("got 1 attachment")                
     except TypeError as err:
+        print("type error while processing attachment")
         pass
     # move eml to folder
     
-
-
 
 def get_list_of_current_dirs(current_path):
     ''' [NOT COMPLETED] 

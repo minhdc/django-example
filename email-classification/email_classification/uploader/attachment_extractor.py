@@ -21,6 +21,10 @@ def get_email_subject(email_header):
 def get_multiple_attachment(email_object):
     payload = email_object.get_payload()
     list_attachment = []
+    #need to count the number of attachments then update in to attachment_number in database field
+                #
+                #
+                #
     for part in email_object.walk():
         if 'application' in part.get_content_type():
             list_attachment.append(part)
@@ -31,6 +35,10 @@ def write_multiple_attachment(list_attachment,path,email_name):
     '''
         copy attachment to the folder which name is corresponding to the file
     '''
+    #need to count the number of attachments then update in to attachment_number in database field
+                #
+                #
+                #
     for attachment in list_attachment:
         file_name = attachment.get_filename()
         data = base64.b64decode(attachment.get_payload())

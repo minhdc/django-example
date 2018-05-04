@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import FormView
 from django.core.files import File
 from django.http import HttpResponse
+from django.conf import settings
 
 from .forms import EmailUploadForm
 from .models import Email
@@ -12,12 +13,17 @@ from .utils import count_eml_files, do_the_classification_job, count_directory, 
 
 # Create your views here.
 def model_form_upload(request):
+    ''' 
+    handle *.eml file upload
+    '''
     if request.method == 'POST':
         form = EmailUploadForm(request.POST,request.FILES)
         emails = request.FILES.getlist('file_field')
         if form.is_valid():
             for each_mail in emails:
                 Email.objects.create(content = each_mail)
+                
+
             return redirect('/uploader')
     else:
         form = EmailUploadForm()
@@ -25,7 +31,9 @@ def model_form_upload(request):
 
 
 def home(request):
-    ''' '''
+    '''
+        display home page
+    '''
     input_eml_path = "temp-email-storage"
     backup_path = "backup-emails"
     main_path = "mainstore"

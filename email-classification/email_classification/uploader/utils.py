@@ -153,8 +153,13 @@ def copy_email_to_storing_folder(src, dst, email_file_name):
     if not os.path.isfile(email_file_name):
         try:
             shutil.copy2(os.path.join(src, email_file_name), os.path.join(dst, email_file_name))
+            #need to update new location to current_loc field in email database
+            #
+            #
+            #
+            #
         except shutil.Error as e:
-            print("shutil error in copyin email to storing folder")
+            print("shutil error in copyin email to storing folder")            
     else:
         print("already exists")
 
@@ -209,12 +214,16 @@ def do_the_classification_job(current_eml_path, treasure_path, eml_key_to_search
             from_addr = extract_value_in_header(get_email_object(current_eml_path, each_mail), "From")
             create_email_storing_folder_if_not_exists(from_addr, "mainstore")
             copy_email_to_storing_folder(current_eml_path, os.path.join("mainstore", from_addr), each_mail)
+          
             move_copied_email_to_treasure(current_eml_path, treasure_path, each_mail)
     else:
         print("empty email list")
 
 
 def process_attachment(current_eml_path):
+    '''
+        attachment processor: extract then create a folder with name = eml_file_name, then copy all into it.
+    '''
     email_list = get_list_of_incoming_emails(current_eml_path)
     print("email-list",email_list)
     try:
@@ -223,6 +232,10 @@ def process_attachment(current_eml_path):
             if has_attachment(email_object._headers):
                 list_attachment = get_multiple_attachment(email_object)
                 write_multiple_attachment(list_attachment, current_eml_path, each_mail.strip(".eml"))
+                #need to count the number of attachments then update in to attachment_number in database field
+                #
+                #
+                #
                 try:
                     shutil.move(os.path.join(current_eml_path, each_mail), os.path.join(current_eml_path,each_mail.strip(".eml")))
                 except shutil.Error as e:

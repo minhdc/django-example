@@ -43,8 +43,8 @@
           data.node.updateCounters();
         },  
         renderNode: function(event, data){
-          
-        }
+
+        },
         //handle clicking event on node
         activate: function (event, data) {
           var node = data.node;                   
@@ -69,6 +69,9 @@
               data: {
                 folder_name: node.title,
               },
+              success: function(data){
+                //alert("number of attachment in current folder: ",data);
+              }
             })            
           }
         },

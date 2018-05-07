@@ -5,6 +5,7 @@ import base64
 
 from email import message_from_file
 from .attachment_extractor import has_attachment, get_multiple_attachment, write_multiple_attachment, get_email_subject
+from .models import Email
 
 
 def count_eml_files(path):
@@ -180,12 +181,15 @@ def get_message_content_in_email_file(main_store, email_file_name):
     '''
         return the message as plain text
     '''
-    email_object = message_from_file(open(os.path.join(main_store, email_file_name), "r"))
-    if email_object.is_multipart():
-        for each_element in email_object.walk():
-            if each_element.get_content_type() == "text/plain":
-                return each_element.get_payload()
-    return None
+    try:
+        email_object = message_from_file(open(os.path.join(main_store, email_file_name), "r"))
+        if email_object.is_multipart():
+            for each_element in email_object.walk():
+                if each_element.get_content_type() == "text/plain":
+                    return each_element.get_payload()
+    except FileNotFoundError as e:
+        pass
+    #return None
 
 
 def create_folder_for_this_mail(email_object, current_storing_path):
@@ -213,9 +217,15 @@ def do_the_classification_job(current_eml_path, treasure_path, eml_key_to_search
             #from_addr = extract_from_address_in_payload(get_email_object(current_eml_path,each_mail),"From")
             from_addr = extract_value_in_header(get_email_object(current_eml_path, each_mail), "From")
             create_email_storing_folder_if_not_exists(from_addr, "mainstore")
-            copy_email_to_storing_folder(current_eml_path, os.path.join("mainstore", from_addr), each_mail)
-          
+            copy_email_to_storing_folder(current_eml_path, os.path.join("mainstore", from_addr), each_mail)            
             move_copied_email_to_treasure(current_eml_path, treasure_path, each_mail)
+            try:
+                add_current_location_to_email_object(each_mail,os.path.join("mainstore",from_addr))
+            except MultipleObjectReturned as e:
+                pass
+        #for each_mail in email_list:
+        #    from_addr = extract_value_in_header(get_email_object(current_eml_path, each_mail), "From")
+            
     else:
         print("empty email list")
 
@@ -223,28 +233,37 @@ def do_the_classification_job(current_eml_path, treasure_path, eml_key_to_search
 def process_attachment(current_eml_path):
     '''
         attachment processor: extract then create a folder with name = eml_file_name, then copy all into it.
+        return the number of attachment in eml file
     '''
     email_list = get_list_of_incoming_emails(current_eml_path)
-    print("email-list",email_list)
+    attachment_count = 0
+    
     try:
         for each_mail in email_list:
             email_object = message_from_file(open(os.path.join(current_eml_path, each_mail), "r"))
+            add_current_location_to_email_object(each_mail,os.path.join(current_eml_path,each_mail.strip(".eml")))
             if has_attachment(email_object._headers):
                 list_attachment = get_multiple_attachment(email_object)
-                write_multiple_attachment(list_attachment, current_eml_path, each_mail.strip(".eml"))
+                attachment_count = len(list_attachment)
+                write_multiple_attachment(list_attachment, current_eml_path, each_mail.strip(".eml"))                
                 #need to count the number of attachments then update in to attachment_number in database field
                 #
                 #
                 #
                 try:
                     shutil.move(os.path.join(current_eml_path, each_mail), os.path.join(current_eml_path,each_mail.strip(".eml")))
+                    #add current location to email object in database
+                    #add_current_location_to_email_object(each_mail,os.path.join(current_eml_path,each_mail.strip(".eml")))
+                    print("modified path of ",each_mail)
+                    print(os.path.join(current_eml_path,each_mail.strip(".eml")))
+                    add_current_location_to_email_object(each_mail,os.path.join(current_eml_path,each_mail.strip(".eml")))
                 except shutil.Error as e:
                     print("move eml error")
                     print("got 1 attachment")                
     except TypeError as err:
         print("type error while processing attachment")
         pass
-    # move eml to folder
+    return attachment_count
     
 
 def get_list_of_current_dirs(current_path):
@@ -256,3 +275,13 @@ def get_list_of_current_dirs(current_path):
             if os.path.isdir(os.path.join(current_path,each_element)):
                 current_dirs.append(each_element)
     return current_dirs
+
+
+def add_current_location_to_email_object(email_name, current_location):
+    email_object = Email.objects.get(content = email_name)
+    email_object.current_location = current_location
+    email_object.save()
+
+#def get_current_email_location(email_id):
+#    email_object = Email.objects.get(pk=email_id)
+#    return email_object.cu  

@@ -3,6 +3,8 @@ import base64
 import patoolib
 
 
+
+
 def has_attachment(email_header):
     for k,v in email_header:        
         if k == "Content-Type":
@@ -34,6 +36,7 @@ def get_multiple_attachment(email_object):
 def write_multiple_attachment(list_attachment,path,email_name):
     '''
         copy attachment to the folder which name is corresponding to the file
+        return current location of attachment
     '''
     #need to count the number of attachments then update in to attachment_number in database field
                 #
@@ -52,4 +55,5 @@ def write_multiple_attachment(list_attachment,path,email_name):
             print(e)
             pass
     print("successfuly copy attachment to store")
+    return dest
         
